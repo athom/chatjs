@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>Facebook style jQuery plugin for chatting</title>
 
+    <link rel="stylesheet" href="stylesheets/font.css">
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -12,16 +13,20 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <!-- chatjs requirements -->
-    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="javascripts/jquery-2.1.1.min.js"></script>
     <script src="ChatJs/js/jquery.autosize.js"></script>
+    <script src="ChatJs/js/deepCopy.js"></script>
     <!-- chatjs files-->
     <script src="ChatJs/js/jquery.chatjs.utils.js"></script>
     <script src="ChatJs/js/jquery.chatjs.adapter.servertypes.js"></script>
     <script src="ChatJs/js/jquery.chatjs.adapter.js"></script>
     <script src="ChatJs/js/jquery.chatjs.adapter.demo.js"></script>
+    <script src="ChatJs/js/jquery.chatjs.adapter.qorchat.js"></script>
+    <script src="ChatJs/js/jquery.chatjs.adapter.signalr.js"></script>
     <script src="ChatJs/js/jquery.chatjs.window.js"></script>
     <script src="ChatJs/js/jquery.chatjs.messageboard.js"></script>
     <script src="ChatJs/js/jquery.chatjs.userlist.js"></script>
+    <script src="ChatJs/js/jquery.chatjs.meetinglist.js"></script>
     <script src="ChatJs/js/jquery.chatjs.pmwindow.js"></script>
     <script src="ChatJs/js/jquery.chatjs.friendswindow.js"></script>
     <script src="ChatJs/js/jquery.chatjs.controller.js"></script>
@@ -30,8 +35,11 @@
     <script type="text/javascript">
         $(function () {
             $.chat({
+                // chat window title
+                friendsTitleText: "QorChat",
                 // your user information
-                userId: 1,
+//                userId: 1,
+//                userId: "athom@126.com",
                 // id of the room. The friends list is based on the room Id
                 roomId: 1,
                 // text displayed when the other user is typing
@@ -40,7 +48,9 @@
                 emptyRoomText: "There's no one around here. You can still open a session in another browser and chat with yourself :)",
                 // the adapter you are using
                 chatJsContentPath: '/Chatjs/',
-                adapter: new DemoAdapter()
+                //adapter: new SignalRAdapter({chatHubName: "Lilu"})
+                adapter: new QorChatAdapter()
+//                adapter: new DemoAdapter()
             });
         });
     </script>
@@ -66,15 +76,15 @@
                 <a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to ChatjS
             </h3>
             <p>ChatJS is a jQuery plugin for instant messaging. It's completely client-side, so it's completely platform agnostic. </p>
-            
+
             <p>Server side communication is implemented through Adapters. The adapter is the piece of code that is responsible for handling client/server
                 communucation. ChatJS comes with a demo adapter that you can see running in the bottom right of this page. It's just an echobot that will repeat what you say.
                 You can use it as a boilerplate to implement your own. The server portion of your solution will be written according to the adapter specification.
             </p>
             <p>I intend to display here a list of all adapter implementations. ASP.NET MVC coming soon.</p>
-            
+
             <p>Once your server code is ready, that's how ChatjS looks in the client:</p>
-            
+
 <pre><code>&lt;script type=&quot;text/javascript&quot;&gt;
     $(function () {
         $.chat({
@@ -102,7 +112,7 @@
                 I develop ChatJS in <a href="http://msdn.microsoft.com/en-us/vstudio/aa718325.aspx">Visual studio</a>  because it's the IDE that i'm most used to and it has great typescript support. Alternatively, you can use
                 <a href="http://www.jetbrains.com/webstorm/">WebStorm</a> or simply use your editor of choice and the <a href="https://www.npmjs.org/package/typescript">NPM TypeScript Transpiler</a> to make it into vanilla JavaScript.
             </p>
-            
+
         </section>
         <footer>
             <p>This project is maintained by <a href="https://github.com/andrerpena">andrerpena</a></p>

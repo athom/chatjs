@@ -1,4 +1,4 @@
-﻿/// <reference path="../../Scripts/Typings/jquery/jquery.d.ts"/>
+/// <reference path="jquery.d.ts"/>
 var ChatJsUtils = (function () {
     function ChatJsUtils() {
     }
@@ -15,7 +15,6 @@ var ChatJsUtils = (function () {
             calculatedHeight -= heights[i];
         jQuery.height(calculatedHeight);
     };
-
     ChatJsUtils.setOuterWidth = function (jQuery, width) {
         var widths = new Array();
         widths.push(parseInt(jQuery.css("padding-left").replace("px", "")));

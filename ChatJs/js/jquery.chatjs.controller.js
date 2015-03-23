@@ -1,16 +1,14 @@
-﻿/// <reference path="../../Scripts/Typings/jquery/jquery.d.ts"/>
-/// <reference path="../../Scripts/Typings/autosize/autosize.d.ts"/>
+/// <reference path="jquery.d.ts"/>
+/// <reference path="deepCopy.d.ts"/>
+/// <reference path="jquery.autosize.d.ts"/>
 /// <reference path="jquery.chatjs.adapter.ts"/>
 /// <reference path="jquery.chatjs.pmwindow.ts"/>
 /// <reference path="jquery.chatjs.friendswindow.ts"/>
-
-
 var ChatControllerOptions = (function () {
     function ChatControllerOptions() {
     }
     return ChatControllerOptions;
 })();
-
 var ChatJsState = (function () {
     function ChatJsState() {
         this.pmWindows = [];
@@ -18,7 +16,6 @@ var ChatJsState = (function () {
     }
     return ChatJsState;
 })();
-
 var ChatController = (function () {
     function ChatController(options) {
         var _this = this;
@@ -33,27 +30,28 @@ var ChatController = (function () {
         defaultOptions.persistenceMode = "cookie";
         defaultOptions.persistenceCookieName = "chatjs";
         defaultOptions.chatJsContentPath = "/chatjs/";
-
         this.options = $.extend({}, defaultOptions, options);
-
         // check required properties
         if (!this.options.roomId)
             throw "Room id option is required";
-
         this.pmWindows = [];
-
         // getting the adapter started. You cannot call the adapter BEFORE this is done.
-        this.options.adapter.init(function () {
+        this.options.adapter.init(function (currentUserId) {
+            if (currentUserId != 0) {
+                _this.options.userId = currentUserId;
+            }
             var state = _this.getState();
-
             // the controller must have a listener to the "messages-changed" event because it has to create
             // new PM windows when the user receives it
             _this.options.adapter.client.onMessagesChanged(function (message) {
-                if (message.UserToId && message.UserToId == _this.options.userId && !_this.findPmWindowByOtherUserId(message.UserFromId)) {
-                    _this.createPmWindow(message.UserFromId, true, true);
+                var myId = _this.options.userId;
+                if (message.UserToId && message.UserToId == myId && !_this.findPmWindowByOtherUserId(message.UserFromId)) {
+                    _this.createPmWindow(message.UserFromId, null, true, true);
+                }
+                else if (!_this.findPmWindowByConvId(message.ConversationId)) {
+                    _this.createPmWindow(null, message.ConversationId, true, true);
                 }
             });
-
             // if the user is able to select rooms
             var friendsWindowOptions = new ChatFriendsWindowOptions();
             friendsWindowOptions.roomId = _this.options.roomId;
@@ -62,12 +60,10 @@ var ChatController = (function () {
             friendsWindowOptions.offsetRight = _this.options.offsetRight;
             friendsWindowOptions.titleText = _this.options.friendsTitleText;
             friendsWindowOptions.isMaximized = state ? state.mainWindowState.isMaximized : true;
-
             // when the friends window changes state, we must save the state of the controller
             friendsWindowOptions.onStateChanged = function () {
                 _this.saveState();
             };
-
             // when the user clicks another user, we must create a pm window
             friendsWindowOptions.userClicked = function (userId) {
                 if (userId != _this.options.userId) {
@@ -76,24 +72,23 @@ var ChatController = (function () {
                     if (existingPmWindow)
                         existingPmWindow.focus();
                     else
-                        _this.createPmWindow(userId, true, true);
+                        _this.createPmWindow(userId, null, true, true);
                 }
             };
-
+            friendsWindowOptions.isPopUp = false;
             _this.mainWindow = $.chatFriendsWindow(friendsWindowOptions);
-
             _this.setState(state);
         });
-
         // for debugging only
         window.chatJs = this;
     }
     // creates a new PM window for the given user
-    ChatController.prototype.createPmWindow = function (otherUserId, isMaximized, saveState) {
+    ChatController.prototype.createPmWindow = function (otherUserId, convId, isMaximized, saveState) {
         var _this = this;
         var chatPmOptions = new ChatPmWindowOptions();
         chatPmOptions.userId = this.options.userId;
         chatPmOptions.otherUserId = otherUserId;
+        chatPmOptions.conversationId = convId;
         chatPmOptions.adapter = this.options.adapter;
         chatPmOptions.typingText = this.options.typingText;
         chatPmOptions.isMaximized = isMaximized;
@@ -101,7 +96,7 @@ var ChatController = (function () {
         chatPmOptions.onCreated = function (pmWindow) {
             _this.pmWindows.push({
                 otherUserId: otherUserId,
-                conversationId: null,
+                conversationId: convId,
                 pmWindow: pmWindow
             });
             _this.organizePmWindows();
@@ -120,25 +115,23 @@ var ChatController = (function () {
         chatPmOptions.onMaximizedStateChanged = function () {
             _this.saveState();
         };
-
+        chatPmOptions.onParticipantInvited = function (pmWindow, convId) {
+            _this.createPmWindow(null, convId, true, true);
+        };
         return $.chatPmWindow(chatPmOptions);
     };
-
     // saves the windows states
     ChatController.prototype.saveState = function () {
         var state = new ChatJsState();
-
         for (var i = 0; i < this.pmWindows.length; i++) {
             state.pmWindows.push({
                 otherUserId: this.pmWindows[i].otherUserId,
-                conversationId: null,
+                conversationId: this.pmWindows[i].conversationId,
                 isMaximized: this.pmWindows[i].pmWindow.getState().isMaximized
             });
         }
-
         // persist rooms state
         state.mainWindowState = this.mainWindow.getState();
-
         switch (this.options.persistenceMode) {
             case "cookie":
                 this.createCookie(this.options.persistenceCookieName, state);
@@ -150,7 +143,6 @@ var ChatController = (function () {
         }
         return state;
     };
-
     ChatController.prototype.getState = function () {
         var state;
         switch (this.options.persistenceMode) {
@@ -164,40 +156,33 @@ var ChatController = (function () {
         }
         return state;
     };
-
     // loads the windows states
     ChatController.prototype.setState = function (state) {
-        if (typeof state === "undefined") { state = null; }
+        if (state === void 0) { state = null; }
         // if a state hasn't been passed in, gets the state. If it continues to be null/undefined, then there's nothing to be done.
         if (!state)
             state = this.getState();
         if (!state)
             return;
-
         for (var i = 0; i < state.pmWindows.length; i++) {
             var shouldCreatePmWindow = true;
-
             // if there's already a PM window for the given user, we'll not create it
             if (this.pmWindows.length) {
                 for (var j = 0; j < this.pmWindows.length; j++) {
-                    if (state.pmWindows[i].otherUserId && this.pmWindows[j].otherUserId == state.pmWindows[j].otherUserId) {
+                    if (state.pmWindows[i].otherUserId && this.pmWindows[j].otherUserId == state.pmWindows[i].otherUserId) {
                         shouldCreatePmWindow = false;
                         break;
                     }
                 }
             }
-
             if (shouldCreatePmWindow)
-                this.createPmWindow(state.pmWindows[i].otherUserId, state.pmWindows[i].isMaximized, false);
+                this.createPmWindow(state.pmWindows[i].otherUserId, state.pmWindows[i].conversationId, state.pmWindows[i].isMaximized, false);
         }
-
         this.mainWindow.setState(state.mainWindowState, false);
     };
-
     ChatController.prototype.eraseCookie = function (name) {
         this.createCookie(name, "", -1);
     };
-
     // reads a cookie. The cookie value will be converted to a JSON object if possible, otherwise the value will be returned as is
     ChatController.prototype.readCookie = function (name) {
         var nameEq = name + "=";
@@ -212,15 +197,16 @@ var ChatController = (function () {
             }
         }
         if (cookieValue) {
-            try  {
+            try {
                 return JSON.parse(cookieValue);
-            } catch (e) {
+            }
+            catch (e) {
                 return cookieValue;
             }
-        } else
+        }
+        else
             return null;
     };
-
     // creates a cookie. The passed in value will be converted to JSON, if not a string
     ChatController.prototype.createCookie = function (name, value, days) {
         var stringedValue;
@@ -234,19 +220,24 @@ var ChatController = (function () {
             var date = new Date();
             date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
             expires = "; expires=" + date.toUTCString();
-        } else {
+        }
+        else {
             expires = "";
         }
         document.cookie = name + "=" + stringedValue + expires + "; path=/";
     };
-
     ChatController.prototype.findPmWindowByOtherUserId = function (otherUserId) {
         for (var i = 0; i < this.pmWindows.length; i++)
             if (this.pmWindows[i].otherUserId == otherUserId)
                 return this.pmWindows[i].pmWindow;
         return null;
     };
-
+    ChatController.prototype.findPmWindowByConvId = function (convId) {
+        for (var i = 0; i < this.pmWindows.length; i++)
+            if (this.pmWindows[i].conversationId == convId)
+                return this.pmWindows[i].pmWindow;
+        return null;
+    };
     // organizes the pm windows
     ChatController.prototype.organizePmWindows = function () {
         // this is the initial right offset
@@ -258,7 +249,6 @@ var ChatController = (function () {
     };
     return ChatController;
 })();
-
 $.chat = function (options) {
     var chat = new ChatController(options);
     return chat;

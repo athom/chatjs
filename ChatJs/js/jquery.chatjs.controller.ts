@@ -1,5 +1,6 @@
-﻿/// <reference path="../../Scripts/Typings/jquery/jquery.d.ts"/>
-/// <reference path="../../Scripts/Typings/autosize/autosize.d.ts"/>
+﻿/// <reference path="jquery.d.ts"/>
+/// <reference path="deepCopy.d.ts"/>
+/// <reference path="jquery.autosize.d.ts"/>
 /// <reference path="jquery.chatjs.adapter.ts"/>
 /// <reference path="jquery.chatjs.pmwindow.ts"/>
 /// <reference path="jquery.chatjs.friendswindow.ts"/>
@@ -56,7 +57,6 @@ class ChatJsState {
 
 class ChatController implements IStateObject<ChatJsState> {
     constructor(options:ChatControllerOptions) {
-
         var defaultOptions = new ChatControllerOptions();
         defaultOptions.roomId = null;
         defaultOptions.friendsTitleText = "Friends";
@@ -78,13 +78,20 @@ class ChatController implements IStateObject<ChatJsState> {
         this.pmWindows = [];
 
         // getting the adapter started. You cannot call the adapter BEFORE this is done.
-        this.options.adapter.init(() => {
+        this.options.adapter.init((currentUserId:number) => {
+            if(currentUserId != 0){
+                this.options.userId = currentUserId;
+            }
+
             var state = this.getState();
             // the controller must have a listener to the "messages-changed" event because it has to create
             // new PM windows when the user receives it
             this.options.adapter.client.onMessagesChanged((message:ChatMessageInfo) => {
-                if (message.UserToId && message.UserToId == this.options.userId && !this.findPmWindowByOtherUserId(message.UserFromId)) {
-                    this.createPmWindow(message.UserFromId, true, true);
+                var myId = this.options.userId;
+                if (message.UserToId && message.UserToId == myId && !this.findPmWindowByOtherUserId(message.UserFromId)) { // private chat
+                    this.createPmWindow(message.UserFromId, null, true, true);
+                } else if (!this.findPmWindowByConvId(message.ConversationId)){ // meeting chat
+                    this.createPmWindow(null, message.ConversationId, true, true);
                 }
             });
 
@@ -110,10 +117,11 @@ class ChatController implements IStateObject<ChatJsState> {
                     if (existingPmWindow)
                         existingPmWindow.focus();
                     else
-                        this.createPmWindow(userId, true, true);
+                        this.createPmWindow(userId, null, true, true);
                 }
             };
 
+            friendsWindowOptions.isPopUp = false;
             this.mainWindow = $.chatFriendsWindow(friendsWindowOptions);
 
 
@@ -125,10 +133,11 @@ class ChatController implements IStateObject<ChatJsState> {
     }
 
     // creates a new PM window for the given user
-    createPmWindow(otherUserId:number, isMaximized:boolean, saveState:boolean):ChatPmWindow {
+    createPmWindow(otherUserId:number, convId:string, isMaximized:boolean, saveState:boolean):ChatPmWindow {
         var chatPmOptions = new ChatPmWindowOptions();
         chatPmOptions.userId = this.options.userId;
         chatPmOptions.otherUserId = otherUserId;
+        chatPmOptions.conversationId = convId;
         chatPmOptions.adapter = this.options.adapter;
         chatPmOptions.typingText = this.options.typingText;
         chatPmOptions.isMaximized = isMaximized;
@@ -136,7 +145,7 @@ class ChatController implements IStateObject<ChatJsState> {
         chatPmOptions.onCreated = (pmWindow) => {
             this.pmWindows.push({
                 otherUserId: otherUserId,
-                conversationId: null,
+                conversationId: convId,
                 pmWindow: pmWindow
             });
             this.organizePmWindows();
@@ -155,6 +164,9 @@ class ChatController implements IStateObject<ChatJsState> {
         chatPmOptions.onMaximizedStateChanged = () => {
             this.saveState();
         };
+        chatPmOptions.onParticipantInvited = (pmWindow, convId) => {
+            this.createPmWindow(null, convId, true, true);
+        };
 
         return $.chatPmWindow(chatPmOptions);
     }
@@ -166,7 +178,7 @@ class ChatController implements IStateObject<ChatJsState> {
         for (var i = 0; i < this.pmWindows.length; i++) {
             state.pmWindows.push({
                 otherUserId: this.pmWindows[i].otherUserId,
-                conversationId: null,
+                conversationId: this.pmWindows[i].conversationId,
                 isMaximized: this.pmWindows[i].pmWindow.getState().isMaximized
             });
         }
@@ -223,7 +235,8 @@ class ChatController implements IStateObject<ChatJsState> {
             }
 
             if (shouldCreatePmWindow)
-                this.createPmWindow(state.pmWindows[i].otherUserId, state.pmWindows[i].isMaximized, false);
+                this.createPmWindow(state.pmWindows[i].otherUserId, state.pmWindows[i].conversationId, state.pmWindows[i].isMaximized, false);
+
         }
 
         this.mainWindow.setState(state.mainWindowState, false);
@@ -245,6 +258,7 @@ class ChatController implements IStateObject<ChatJsState> {
                 cookieValue = c.substring(nameEq.length, c.length);
             }
         }
+
         if (cookieValue) {
             try {
                 return JSON.parse(cookieValue);
@@ -277,6 +291,13 @@ class ChatController implements IStateObject<ChatJsState> {
     private findPmWindowByOtherUserId(otherUserId:number):ChatPmWindow {
         for (var i = 0; i < this.pmWindows.length; i++)
             if (this.pmWindows[i].otherUserId == otherUserId)
+                return this.pmWindows[i].pmWindow;
+        return null;
+    }
+
+    private findPmWindowByConvId(convId:string):ChatPmWindow {
+        for (var i = 0; i < this.pmWindows.length; i++)
+            if (this.pmWindows[i].conversationId == convId)
                 return this.pmWindows[i].pmWindow;
         return null;
     }

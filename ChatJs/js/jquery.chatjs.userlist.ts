@@ -1,4 +1,4 @@
-﻿/// <reference path="../../Scripts/Typings/jquery/jquery.d.ts"/>
+﻿/// <reference path="jquery.d.ts"/>
 /// <reference path="jquery.chatjs.interfaces.ts"/>
 /// <reference path="jquery.chatjs.utils.ts"/>
 /// <reference path="jquery.chatjs.adapter.ts"/>
@@ -11,7 +11,7 @@ interface JQuery {
 
 class UserListOptions {
     adapter: IAdapter;
-    conversationId: number;
+    conversationId: string;
     roomId: number;
     // the id of the current user
     userId: number;
@@ -20,6 +20,8 @@ class UserListOptions {
     userClicked: (userId: number) => void;
     // whether or not the current user should be excluded from the user list
     excludeCurrentUser: boolean;
+
+    filterUserIds: Array<string>;
 }
 
 class UserList {
@@ -68,6 +70,19 @@ class UserList {
             }
         }
 
+        if(this.options.filterUserIds && this.options.filterUserIds.length > 0){
+            var newUserList = Array<ChatMeetingInfo>();
+            var j = 0;
+            while (j < userList.length) {
+                if (this.options.filterUserIds.indexOf(userList[j].Id.toString()) == -1){
+                    newUserList.push(userList[j]);
+                }
+                j++;
+            }
+            userList = newUserList;
+        }
+
+
         this.$el.html('');
         if (userList.length == 0) {
             $("<div/>").addClass("user-list-empty").text(this.options.emptyRoomText).appendTo(this.$el);
@@ -109,7 +124,6 @@ class UserList {
     $el: JQuery;
     options: UserListOptions;
 }
-
 
 $.fn.userList = function(options: UserListOptions) {
     if (this.length) {

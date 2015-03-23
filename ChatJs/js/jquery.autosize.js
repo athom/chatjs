@@ -159,8 +159,8 @@
                 }
 
                 if (!ta.value && options.placeholder) {
-                    // If the textarea is empty, copy the placeholder text into 
-                    // the mirror control and use that for sizing so that we 
+                    // If the textarea is empty, copy the placeholder text into
+                    // the mirror control and use that for sizing so that we
                     // don't end up with placeholder getting trimmed.
                     mirror.value = ($ta.attr("placeholder") || '') + options.append;
                 } else {

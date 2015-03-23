@@ -1,4 +1,4 @@
-﻿/// <reference path="../../Scripts/Typings/jquery/jquery.d.ts"/>
+﻿/// <reference path="jquery.d.ts"/>
 
 class ChatJsUtils {
 

@@ -69,7 +69,7 @@
     }
 
 .chat-window-title {
-    background: none repeat scroll 0 0 #EEEEEE;
+    background: none repeat scroll 0 0 #1f1f1f;
     color: #7E7E7E;
     cursor: pointer;
     overflow: hidden;
@@ -78,11 +78,20 @@
 
     .chat-window-title .text {
         margin-top: 1px;
+        text-align: center;
     }
 
     .chat-window-title .close {
         background-image: url("../Images/clear.png");
         float: right;
+        height: 16px;
+        opacity: 0.7;
+        width: 16px;
+    }
+
+    .chat-window-title .invite-user {
+        background-image: url("../Images/add.png");
+        float: left;
         height: 16px;
         opacity: 0.7;
         width: 16px;
@@ -109,6 +118,44 @@
         background-repeat: no-repeat;
         padding-left: 22px;
     }
+
+.chat-window-inner-tabs {
+    display: block;
+    list-style-type: disc;
+    /*-webkit-margin-before: 1em;*/
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 0px;
+    -webkit-padding-end: 0px;
+    overflow: hidden;
+}
+    .chat-window-inner-tab {
+        float: left;
+        border-right: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        line-height: 32px;
+        background: #e6e6e6;
+
+        list-style: none;
+        width: 49.5%;
+    }
+    .chat-window-inner-tab.current{
+        border-bottom: 1px solid #fff;
+        background: #fff;
+    }
+
+        .chat-window-inner-tab a{
+            display: block;
+            cursor: pointer;
+
+            height: 32px;
+            text-align: center;
+            color: #333;
+        }
+
+
+
 
 .chat-window-inner-content {
     max-height: 300px;

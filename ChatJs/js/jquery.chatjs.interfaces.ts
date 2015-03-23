@@ -9,6 +9,8 @@ interface IStateObject<TState> {
 interface IWindow<TState> extends IStateObject<TState> {
     // sets the right offset, that is, the distance from this window to the right edge of the window
     setRightOffset(offset: number): void;
+    // returns the window right offset
+    getRightOffset():number;
     // returns the window width
     getWidth():number;
     // sets focus on the window

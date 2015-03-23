@@ -1,5 +1,5 @@
-﻿/// <reference path="../../Scripts/Typings/jquery/jquery.d.ts"/>
-/// <reference path="../../Scripts/Typings/autosize/autosize.d.ts"/>
+﻿/// <reference path="jquery.d.ts"/>
+/// <reference path="jquery.autosize.d.ts"/>
 /// <reference path="jquery.chatjs.utils.ts"/>
 /// <reference path="jquery.chatjs.adapter.ts"/>
 
@@ -17,7 +17,7 @@ class MessageBoardOptions {
     // in case this is a room board, this is the room id
     roomId: number;
     // in case this is a conversation board, this is the conversation id
-    conversationId: number;
+    conversationId: string;
     // text displayed while the other user is typing
     typingText: string;
     // whether to play sound when message arrives
@@ -81,18 +81,24 @@ class MessageBoard {
         });
 
         this.options.adapter.client.onMessagesChanged((message: ChatMessageInfo) => {
-
             var shouldProcessMessage = false;
+            var otherUserId = this.options.otherUserId;
+            var userId = this.options.userId;
 
-            if (this.options.otherUserId) {
+            if (otherUserId) {
                 // it's a PM message board.
-                shouldProcessMessage = (message.UserFromId == this.options.userId && message.UserToId == this.options.otherUserId) || (message.UserFromId == this.options.otherUserId && message.UserToId == this.options.userId);
+                shouldProcessMessage = (message.UserFromId == userId && message.UserToId == otherUserId) || (message.UserFromId == otherUserId && message.UserToId == userId);
             } else if (this.options.roomId) {
                 // it's a room message board
                 shouldProcessMessage = message.RoomId == this.options.roomId;
             } else if (this.options.conversationId) {
                 // it's a conversation message board
                 shouldProcessMessage = message.ConversationId == this.options.conversationId;
+            }
+
+            // skip system message
+            if(message.IsSystemMessage && message.ConversationId != this.options.conversationId){
+                return;
             }
 
             if (shouldProcessMessage) {
@@ -167,6 +173,7 @@ class MessageBoard {
         this.options.adapter.server.sendTypingSignal(this.options.roomId, this.options.conversationId, this.options.otherUserId, () => {});
     }
 
+
     sendMessage(messageText) {
         /// <summary>Sends a message to the other user</summary>
         /// <param FullName="messageText" type="String">Message being sent</param>
@@ -180,7 +187,6 @@ class MessageBoard {
         message.ClientGuid = clientGuid;
 
         this.addMessage(message);
-
         this.options.adapter.server.sendMessage(this.options.roomId, this.options.conversationId, this.options.otherUserId, messageText, clientGuid, () => {});
     }
 
@@ -303,6 +309,7 @@ class MessageBoard {
 
                 // add image
                 var $img = $("<img/>").addClass("profile-picture").appendTo($gravatarWrapper);
+                console.log(message.UserFromId)
                 this.options.adapter.server.getUserInfo(message.UserFromId, user => {
                     $img.attr("src", decodeURI(user.ProfilePictureUrl));
                 });

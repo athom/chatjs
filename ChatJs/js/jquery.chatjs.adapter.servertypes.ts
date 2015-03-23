@@ -6,7 +6,7 @@
     UserToId: number;
 
     /// The conversation to which the message is being sent
-    ConversationId: number;
+    ConversationId: string;
 
     /// The room to which the message is being sent
     RoomId: number;
@@ -26,12 +26,32 @@
 
     /// Still verifying whether this is necessary
     DateTime: Date
+
+    IsSystemMessage: boolean;
+    NewAddedUserIds: Array<number>;
 }
 
 enum UserStatusType {
     Offline = 0,
     Online = 1
 }
+
+/// <summary>
+/// Information about a Meeting
+/// </summary>
+class ChatMeetingInfo {
+    /// User chat status. For now, it only supports online and offline
+    constructor() {
+
+    }
+
+    /// User Id (preferebly the same as database user Id)
+    Id: number;
+
+    /// User display name
+    Name: string;
+}
+
 
 /// <summary>
 /// Information about a chat user
@@ -84,7 +104,7 @@ class ChatTypingSignalInfo {
     RoomId: number;
 
     // conversation to send the typing signal to
-    ConversationId: number;
+    ConversationId: string;
 
     // user to send the typing signal to
     UserToId: number;
@@ -99,7 +119,7 @@ class ChatUserListChangedInfo {
     RoomId: number;
 
     // conversation from which the users changed
-    ConversationId: number;
+    ConversationId: string;
 
     // list of users
     UserList: Array<ChatUserInfo>;

@@ -1,0 +1,31 @@
+<component name="libraryTable">
+  <library name="Generated files" type="javaScript">
+    <properties>
+      <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.utils.js" />
+        <item url="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.friendswindow.js" />
+        <item url="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.window.js" />
+        <item url="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.messageboard.js" />
+        <item url="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.adapter.servertypes.js" />
+        <item url="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.userlist.js" />
+        <item url="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.meetinglist.js" />
+        <item url="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.adapter.qorchat.js" />
+        <item url="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.adapter.js" />
+        <item url="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.interfaces.js" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.utils.js" />
+      <root url="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.window.js" />
+      <root url="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.friendswindow.js" />
+      <root url="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.messageboard.js" />
+      <root url="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.adapter.servertypes.js" />
+      <root url="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.userlist.js" />
+      <root url="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.meetinglist.js" />
+      <root url="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.adapter.qorchat.js" />
+      <root url="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.interfaces.js" />
+      <root url="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.adapter.js" />
+    </CLASSES>
+    <SOURCES />
+  </library>
+</component>

@@ -74,15 +74,45 @@ class DemoServerAdapter implements IServerAdapter {
         var echoBotUser = new ChatUserInfo();
         echoBotUser.Id = DemoAdapterConstants.ECHOBOT_USER_ID;
         echoBotUser.RoomId = DemoAdapterConstants.DEFAULT_ROOM_ID;
-        echoBotUser.Name = "Echobot";
+        echoBotUser.Name = "Echobot1";
         echoBotUser.Email = "echobot1984@gmail.com";
         echoBotUser.ProfilePictureUrl = "http://www.gravatar.com/avatar/4ec6b20c5fed48b6b01e88161c0a3e20.jpg";
         echoBotUser.Status = UserStatusType.Online;
+
+        // Echobot is the guy that will repeat everything you say
+        var echoBotUser2 = new ChatUserInfo();
+        echoBotUser2.Id = 3;
+        echoBotUser2.RoomId = DemoAdapterConstants.DEFAULT_ROOM_ID;
+        echoBotUser2.Name = "Yeer";
+        echoBotUser2.Email = "yeerkunth@gmail.com";
+        echoBotUser2.ProfilePictureUrl = "https://avatars0.githubusercontent.com/u/85204";
+        echoBotUser2.Status = UserStatusType.Online;
 
         // adds the users in the global user list
         this.users = new Array<ChatUserInfo>();
         this.users.push(myUser);
         this.users.push(echoBotUser);
+        this.users.push(echoBotUser2);
+
+        var meeting1 = new ChatMeetingInfo();
+        meeting1.Id = 1;
+        meeting1.Name = "Winter Dog";
+
+        var meeting2 = new ChatMeetingInfo();
+        meeting2.Id = 3;
+        meeting2.Name = "Summer Cat";
+
+        var meeting3 = new ChatMeetingInfo();
+        meeting3.Id = 5;
+        meeting3.Name = "Super Mario";
+
+        // adds meetings in the global meeting list
+        // list of users
+        this.meetings = new Array<ChatMeetingInfo>();
+        this.meetings.push(meeting1);
+        this.meetings.push(meeting2);
+        this.meetings.push(meeting3);
+
 
         // configuring rooms
         var defaultRoom = new ChatRoomInfo();
@@ -99,7 +129,7 @@ class DemoServerAdapter implements IServerAdapter {
         });
     }
 
-    sendMessage(roomId:number, conversationId:number, otherUserId:number, messageText:string, clientGuid:string, done:() => void):void {
+    sendMessage(roomId:number, conversationId:string, otherUserId:number, messageText:string, clientGuid:string, done:() => void):void {
         console.log("DemoServerAdapter: sendMessage");
 
         // we have to send the current message to the current user first
@@ -162,11 +192,11 @@ class DemoServerAdapter implements IServerAdapter {
         }, DemoAdapterConstants.ECHOBOT_TYPING_DELAY);
     }
 
-    sendTypingSignal(roomId:number, conversationId:number, userToId:number, done:() => void):void {
+    sendTypingSignal(roomId:number, conversationId:string, userToId:number, done:() => void):void {
         console.log("DemoServerAdapter: sendTypingSignal");
     }
 
-    getMessageHistory(roomId:number, conversationId:number, otherUserId:number, done:(p1:Array<ChatMessageInfo>)=>void):void {
+    getMessageHistory(roomId:number, conversationId:string, otherUserId:number, done:(p1:Array<ChatMessageInfo>)=>void):void {
         console.log("DemoServerAdapter: getMessageHistory");
         done([]);
     }
@@ -185,11 +215,21 @@ class DemoServerAdapter implements IServerAdapter {
         done(user);
     }
 
-    getUserList(roomId:number, conversationId:number, done:(p1:Array<ChatUserInfo>)=>void):void {
+    getUserList(roomId:number, conversationId:string, done:(p1:Array<ChatUserInfo>)=>void):void {
         console.log("DemoServerAdapter: getUserList");
         if(roomId == DemoAdapterConstants.DEFAULT_ROOM_ID)
         {
             done(this.users);
+            return;
+        }
+        throw "The given room or conversation is not supported by the demo adapter";
+    }
+
+    getMeetingList(roomId:number, done:(p1:Array<ChatMeetingInfo>)=>void):void {
+        console.log("DemoServerAdapter: getMeetingList");
+        if(roomId == DemoAdapterConstants.DEFAULT_ROOM_ID)
+        {
+            done(this.meetings);
             return;
         }
         throw "The given room or conversation is not supported by the demo adapter";
@@ -212,6 +252,11 @@ class DemoServerAdapter implements IServerAdapter {
         console.log("DemoServerAdapter: leaveRoom");
     }
 
+
+    addOneParticipant(convId:string, existUserIds:Array<string>, userId:string) :string{
+        return "";
+    }
+
     // gets the given user from the user list
     getUserById(userId: number):ChatUserInfo {
         for(var i = 0; i < this.users.length ;i++)
@@ -225,6 +270,9 @@ class DemoServerAdapter implements IServerAdapter {
     // the client adapter
     clientAdapter: IClientAdapter;
 
+    // list of meetings
+    meetings:Array<ChatMeetingInfo>;
+
     // list of users
     users:Array<ChatUserInfo>;
 
@@ -234,10 +282,10 @@ class DemoServerAdapter implements IServerAdapter {
 
 class DemoAdapter implements IAdapter {
     // called when the adapter is initialized
-    init(done:() => void):void {
+    init(done:(currentUserId:number) => void):void {
         this.client = new DemoClientAdapter();
         this.server = new DemoServerAdapter(this.client);
-        done();
+        done(0);
     }
 
     // functions called by the server, to contact the client

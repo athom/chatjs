@@ -4,7 +4,7 @@
 // represents the communication channel between ChatJS and the server
 interface IAdapter {
     // called when the adapter is initialized
-    init: (done:() => void) => void;
+    init: (done:(currentUserId:number) => void) => void;
 
     // functions called by the server, to contact the client
     client: IClientAdapter;
@@ -42,25 +42,30 @@ interface IClientAdapter {
 interface IServerAdapter {
 
     // sends a message to a room, conversation or user
-    sendMessage(roomId:number, conversationId:number, otherUserId:number, messageText:string, clientGuid:string, done:() => void): void;
+    sendMessage(roomId:number, conversationId:string, otherUserId:number, messageText:string, clientGuid:string, done:() => void): void;
 
     // sends a typing signal to a room, conversation or user
-    sendTypingSignal(roomId:number, conversationId:number, userToId:number, done:() => void): void;
+    sendTypingSignal(roomId:number, conversationId:string, userToId:number, done:() => void): void;
 
     // gets the message history from a room, conversation or user
-    getMessageHistory(roomId:number, conversationId:number, otherUserId:number, done:(messages:Array<ChatMessageInfo>) => void): void;
+    getMessageHistory(roomId:number, conversationId:string, otherUserId:number, done:(messages:Array<ChatMessageInfo>) => void): void;
 
     // gets the given user info
     getUserInfo(userId:number, done:(userInfo:ChatUserInfo) => void): void;
 
     // gets the user list in a room or conversation
-    getUserList(roomId:number, conversationId:number, done:(userList:Array<ChatUserInfo>) => void): void;
+    getUserList(roomId:number, conversationId:string, done:(userList:Array<ChatUserInfo>) => void): void;
+
+    // gets the user list in a room or conversation
+    getMeetingList(roomId:number, done:(userList:Array<ChatMeetingInfo>) => void): void;
 
     // enters the given room
     enterRoom(roomId:number, done:() => void): void;
 
     // leaves the given room
     leaveRoom(roomId:number, done:() => void): void;
+
+    addOneParticipant(convId:string, existUserIds:Array<string>, userId:string): string;
 }
 
 

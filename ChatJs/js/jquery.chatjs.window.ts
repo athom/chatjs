@@ -1,4 +1,4 @@
-﻿/// <reference path="../../Scripts/Typings/jquery/jquery.d.ts"/>
+﻿/// <reference path="jquery.d.ts"/>
 /// <reference path="jquery.chatjs.interfaces.ts"/>
 
 interface JQueryStatic {
@@ -55,11 +55,18 @@ class ChatWindow implements IWindow<boolean> {
         }
         $("<div/>").addClass("text").text(this.options.title).appendTo(this.$windowTitle);
 
+
+
+
         // content
         this.$windowContent = $("<div/>").addClass("chat-window-content").appendTo(this.$window);
         if (this.options.height)
             this.$windowContent.css("height", this.options.height);
+
+
+        // items: friends or groups
         this.$windowInnerContent = $("<div/>").addClass("chat-window-inner-content").appendTo(this.$windowContent);
+
 
         // wire everything up
         this.$windowTitle.click(() => {
@@ -77,6 +84,11 @@ class ChatWindow implements IWindow<boolean> {
 
     setRightOffset(offset:number) {
         this.$window.css("right", offset);
+    }
+
+    getRightOffset() {
+        var offset = this.$window.css("right").slice(0,-2);
+        return parseInt(offset,10);
     }
 
     setTitle(title:string) {
@@ -119,6 +131,7 @@ class ChatWindow implements IWindow<boolean> {
     focus():void {
         //todo: Implement
     }
+
 
     defaults:ChatWindowOptions;
     options:ChatWindowOptions;
