@@ -103,6 +103,7 @@ class ChatPmWindow implements IWindow<PmWindowState> {
                     this._refreshWindowTitle();
                 }
             };
+
             window.$windowInnerContent.messageBoard(messageBoardOptions);
             window.$windowInnerContent.addClass("pm-window");
         };

@@ -548,6 +548,10 @@ class QorChatServerAdapter implements IServerAdapter {
             contentType: 'application/json',
             dataType: 'json',
             success: function (data) {
+                if(!data){
+                    return;
+                }
+
                 for(var i = 0; i < data.length; i++){
                     var msg = new ChatMessageInfo();
                     msg.ConversationId = convId;

@@ -3,9 +3,10 @@
     <properties>
       <sourceFilesUrls>
         <item url="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.utils.js" />
-        <item url="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.friendswindow.js" />
         <item url="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.window.js" />
+        <item url="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.friendswindow.js" />
         <item url="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.messageboard.js" />
+        <item url="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.pmwindow.js" />
         <item url="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.adapter.servertypes.js" />
         <item url="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.userlist.js" />
         <item url="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.meetinglist.js" />
@@ -16,9 +17,10 @@
     </properties>
     <CLASSES>
       <root url="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.utils.js" />
-      <root url="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.window.js" />
       <root url="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.friendswindow.js" />
+      <root url="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.window.js" />
       <root url="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.messageboard.js" />
+      <root url="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.pmwindow.js" />
       <root url="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.adapter.servertypes.js" />
       <root url="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.userlist.js" />
       <root url="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.meetinglist.js" />
