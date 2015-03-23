@@ -146,7 +146,8 @@ var MessageBoard = (function () {
         });
     };
     MessageBoard.prototype.playSound = function () {
-        /// <summary>Plays a notification sound</summary>
+        /// <summa
+        // ry>Plays a notification sound</summary>
         /// <param FullName="fileFullName" type="String">The file path without extension</param>
         var $soundContainer = $("#soundContainer");
         if (!$soundContainer.length)
