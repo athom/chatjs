@@ -37,6 +37,9 @@ var ChatController = (function () {
         this.pmWindows = [];
         // getting the adapter started. You cannot call the adapter BEFORE this is done.
         this.options.adapter.init(function (currentUserId) {
+            if (currentUserId == -1) {
+                return;
+            }
             if (currentUserId != 0) {
                 _this.options.userId = currentUserId;
             }

@@ -140,8 +140,10 @@ class QorChatServerAdapter implements IServerAdapter {
 
 
         // adds the users in the global user list
-        this._setCurrentUserAndUserList(email);
-
+        this.accessable = this._setCurrentUserAndUserList(email);
+        if(!this.accessable){
+            return;
+        }
 
         this.conn = new WebSocket(
             "ws://chat_server.qortex.theplant-dev.com" + "/ws/theplant/" + self.qorchatToken
@@ -312,6 +314,10 @@ class QorChatServerAdapter implements IServerAdapter {
 
     getUserInfo(userId:number, done:(p1:ChatUserInfo)=>void):void {
         console.log("QorChatServerAdapter: getUserInfo");
+        if(!this.accessable){
+            alert("maybe your email account was not ailable on demo.qortex.com @theplant org, contact yeer for solution:)");
+            return;
+        }
         console.log(userId);
         var user:ChatUserInfo = null;
         for (var i:number = 0; i < this.users.length; i++) {
@@ -357,6 +363,9 @@ class QorChatServerAdapter implements IServerAdapter {
 
     enterRoom(roomId:number, done:()=>void):void {
         console.log("QorChatServerAdapter: enterRoom");
+        if(!this.accessable){
+            return;
+        }
 
         if(roomId != QorChatAdapterConstants.DEFAULT_ROOM_ID)
             throw "Only the default room is supported in the demo adapter";
@@ -403,7 +412,7 @@ class QorChatServerAdapter implements IServerAdapter {
         return emails;
     }
 
-    _setCurrentUserAndUserList(email:string) {
+    _setCurrentUserAndUserList(email:string):boolean {
         var self = this;
         self.users = new Array<ChatUserInfo>();
         $.ajax("http://chat_server.qortex.theplant-dev.com/teams/theplant/users", {
@@ -431,6 +440,7 @@ class QorChatServerAdapter implements IServerAdapter {
                 }
             }
         })
+        return self.currentUser!=null
     }
 
     _addParticipantToMeeting(convId: string, newUserId:string) :void {
@@ -616,6 +626,7 @@ class QorChatServerAdapter implements IServerAdapter {
 
     qorchatToken: string;
     currentUser: ChatUserInfo;
+    accessable: boolean;
 }
 
 class QorChatAdapter implements IAdapter {
@@ -632,6 +643,9 @@ class QorChatAdapter implements IAdapter {
     }
     // called when the adapter is initialized
     init(done:(currentUserId:number) => void):void {
+        if(!this.currentUser){
+            return;
+        }
         this.client = new QorChatClientAdapter();
         this.server = new QorChatServerAdapter(this.client, this.email, this.qorchatToken);
         done(this.currentUser.Id);

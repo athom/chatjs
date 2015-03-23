@@ -107,7 +107,10 @@ var QorChatServerAdapter = (function () {
         this.qorchatToken = token;
         var self = this;
         // adds the users in the global user list
-        this._setCurrentUserAndUserList(email);
+        this.accessable = this._setCurrentUserAndUserList(email);
+        if (!this.accessable) {
+            return;
+        }
         this.conn = new WebSocket("ws://chat_server.qortex.theplant-dev.com" + "/ws/theplant/" + self.qorchatToken);
         this.conn.onopen = function (evt) {
             var data = new QorChatRosterAllDataPkg();
@@ -251,6 +254,10 @@ var QorChatServerAdapter = (function () {
     };
     QorChatServerAdapter.prototype.getUserInfo = function (userId, done) {
         console.log("QorChatServerAdapter: getUserInfo");
+        if (!this.accessable) {
+            alert("maybe your email account was not ailable on demo.qortex.com @theplant org, contact yeer for solution:)");
+            return;
+        }
         console.log(userId);
         var user = null;
         for (var i = 0; i < this.users.length; i++) {
@@ -287,6 +294,9 @@ var QorChatServerAdapter = (function () {
     };
     QorChatServerAdapter.prototype.enterRoom = function (roomId, done) {
         console.log("QorChatServerAdapter: enterRoom");
+        if (!this.accessable) {
+            return;
+        }
         if (roomId != QorChatAdapterConstants.DEFAULT_ROOM_ID)
             throw "Only the default room is supported in the demo adapter";
         var userListChangedInfo = new ChatUserListChangedInfo();
@@ -351,6 +361,7 @@ var QorChatServerAdapter = (function () {
                 }
             }
         });
+        return self.currentUser != null;
     };
     QorChatServerAdapter.prototype._addParticipantToMeeting = function (convId, newUserId) {
         var self = this;
@@ -509,6 +520,9 @@ var QorChatAdapter = (function () {
     }
     // called when the adapter is initialized
     QorChatAdapter.prototype.init = function (done) {
+        if (!this.currentUser) {
+            return;
+        }
         this.client = new QorChatClientAdapter();
         this.server = new QorChatServerAdapter(this.client, this.email, this.qorchatToken);
         done(this.currentUser.Id);

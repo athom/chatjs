@@ -79,6 +79,10 @@ class ChatController implements IStateObject<ChatJsState> {
 
         // getting the adapter started. You cannot call the adapter BEFORE this is done.
         this.options.adapter.init((currentUserId:number) => {
+            if(currentUserId == -1){
+                return;
+            }
+
             if(currentUserId != 0){
                 this.options.userId = currentUserId;
             }
