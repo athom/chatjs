@@ -13,6 +13,8 @@ var QorChatAdapterConstants = (function () {
     QorChatAdapterConstants.ECHOBOT_TYPING_DELAY = 1000;
     // time until Echobot sends the message back
     QorChatAdapterConstants.ECHOBOT_REPLY_DELAY = 3000;
+    QorChatAdapterConstants.CHAT_SERVER_BASE_HTTP_URL = "http://chat_server.qortex.theplant-dev.com";
+    QorChatAdapterConstants.CHAT_SERVER_BASE_WS_URL = "ws://chat_server.qortex.theplant-dev.com";
     return QorChatAdapterConstants;
 })();
 var QueryConvOptions = (function () {
@@ -101,23 +103,61 @@ var QorChatClientAdapter = (function () {
 })();
 var QorChatServerAdapter = (function () {
     function QorChatServerAdapter(clientAdapter, email, token) {
-        var _this = this;
         this.clientAdapter = clientAdapter;
         // configuring users
         this.qorchatToken = token;
-        var self = this;
         // adds the users in the global user list
         this.accessable = this._setCurrentUserAndUserList(email);
         if (!this.accessable) {
             return;
         }
-        this.conn = new WebSocket("ws://chat_server.qortex.theplant-dev.com" + "/ws/theplant/" + self.qorchatToken);
+        this.setupWsConn();
+        var meeting1 = new ChatMeetingInfo();
+        meeting1.Id = 1;
+        meeting1.Name = "Winter Dog";
+        var meeting2 = new ChatMeetingInfo();
+        meeting2.Id = 3;
+        meeting2.Name = "Summer Cat";
+        var meeting3 = new ChatMeetingInfo();
+        meeting3.Id = 5;
+        meeting3.Name = "Super Mario";
+        // adds meetings in the global meeting list
+        // list of users
+        this.meetings = new Array();
+        this.meetings.push(meeting1);
+        this.meetings.push(meeting2);
+        this.meetings.push(meeting3);
+        // configuring rooms
+        var defaultRoom = new ChatRoomInfo();
+        defaultRoom.Id = 1;
+        defaultRoom.Name = "Default Room";
+        defaultRoom.UsersOnline = this.users.length;
+        this.rooms = new Array();
+        this.rooms.push(defaultRoom);
+        // configuring client to return every event to me
+        this.clientAdapter.onMessagesChanged(function (message) { return function () {
+        }; });
+    }
+    QorChatServerAdapter.prototype.setupWsConn = function () {
+        var _this = this;
+        var self = this;
+        this.conn = new WebSocket(QorChatAdapterConstants.CHAT_SERVER_BASE_WS_URL + "/ws/theplant/" + self.qorchatToken);
         this.conn.onopen = function (evt) {
             var data = new QorChatRosterAllDataPkg();
             var jsonStr = JSON.stringify(data);
             _this.conn.send(jsonStr);
         };
-        var self = this;
+        this.conn.onerror = function (evt) {
+            console.log("ws errorr");
+            console.log(evt);
+        };
+        this.conn.onclose = function (evt) {
+            var reconnectTime = Math.floor(Math.random() * 10001) + 3000;
+            setTimeout(function () {
+                console.log("reconnect ws");
+                self.setupWsConn();
+            }, reconnectTime);
+        };
         this.conn.onmessage = function (evt) {
             var data = JSON.parse(evt.data);
             if (!data) {
@@ -189,32 +229,7 @@ var QorChatServerAdapter = (function () {
                 _this.clientAdapter.triggerMessagesChanged(msg);
             }
         };
-        var meeting1 = new ChatMeetingInfo();
-        meeting1.Id = 1;
-        meeting1.Name = "Winter Dog";
-        var meeting2 = new ChatMeetingInfo();
-        meeting2.Id = 3;
-        meeting2.Name = "Summer Cat";
-        var meeting3 = new ChatMeetingInfo();
-        meeting3.Id = 5;
-        meeting3.Name = "Super Mario";
-        // adds meetings in the global meeting list
-        // list of users
-        this.meetings = new Array();
-        this.meetings.push(meeting1);
-        this.meetings.push(meeting2);
-        this.meetings.push(meeting3);
-        // configuring rooms
-        var defaultRoom = new ChatRoomInfo();
-        defaultRoom.Id = 1;
-        defaultRoom.Name = "Default Room";
-        defaultRoom.UsersOnline = this.users.length;
-        this.rooms = new Array();
-        this.rooms.push(defaultRoom);
-        // configuring client to return every event to me
-        this.clientAdapter.onMessagesChanged(function (message) { return function () {
-        }; });
-    }
+    };
     QorChatServerAdapter.prototype.sendMessage = function (roomId, conversationId, otherUserId, messageText, clientGuid, done) {
         console.log(messageText);
         console.log("QorChatServerAdapter: sendMessage");
@@ -336,7 +351,7 @@ var QorChatServerAdapter = (function () {
     QorChatServerAdapter.prototype._setCurrentUserAndUserList = function (email) {
         var self = this;
         self.users = new Array();
-        $.ajax("http://chat_server.qortex.theplant-dev.com/teams/theplant/users", {
+        $.ajax(QorChatAdapterConstants.CHAT_SERVER_BASE_HTTP_URL + "/teams/theplant/users", {
             async: false,
             type: 'get',
             headers: { Authorization: 'Bearer ' + self.qorchatToken },
@@ -370,7 +385,7 @@ var QorChatServerAdapter = (function () {
         var options = new AddParticipantOptions();
         options.convId = convId;
         options.participantIds = ids;
-        $.ajax("http://chat_server.qortex.theplant-dev.com/teams/theplant/conversations/add_participants", {
+        $.ajax(QorChatAdapterConstants.CHAT_SERVER_BASE_HTTP_URL + "/teams/theplant/conversations/add_participants", {
             async: false,
             type: 'post',
             headers: { Authorization: 'Bearer ' + self.qorchatToken },
@@ -399,7 +414,7 @@ var QorChatServerAdapter = (function () {
     QorChatServerAdapter.prototype._getConvParticipants = function (convId) {
         var users = new Array();
         var self = this;
-        $.ajax("http://chat_server.qortex.theplant-dev.com/teams/theplant/conversations/" + convId, {
+        $.ajax(QorChatAdapterConstants.CHAT_SERVER_BASE_HTTP_URL + "/teams/theplant/conversations/" + convId, {
             async: false,
             type: 'get',
             headers: { Authorization: 'Bearer ' + self.qorchatToken },
@@ -423,7 +438,7 @@ var QorChatServerAdapter = (function () {
             convId = id;
             return convId;
         }
-        $.ajax("http://chat_server.qortex.theplant-dev.com/teams/theplant/conversations", {
+        $.ajax(QorChatAdapterConstants.CHAT_SERVER_BASE_HTTP_URL + "/teams/theplant/conversations", {
             async: false,
             type: 'post',
             data: JSON.stringify(options),
@@ -444,7 +459,7 @@ var QorChatServerAdapter = (function () {
     QorChatServerAdapter.prototype._getChatHistory = function (convId) {
         var self = this;
         var msgs = new Array();
-        var url = "http://chat_server.qortex.theplant-dev.com/teams/theplant/messages?convId=" + convId + "&before=&limit=5";
+        var url = QorChatAdapterConstants.CHAT_SERVER_BASE_HTTP_URL + "/teams/theplant/messages?convId=" + convId + "&before=&limit=5";
         $.ajax(url, {
             async: false,
             type: 'get',
@@ -500,7 +515,6 @@ var QorChatServerAdapter = (function () {
     };
     QorChatServerAdapter.prototype._getUserByEmails = function (emails) {
         var users = new Array();
-        ;
         for (var i = 0; i < this.users.length; i++) {
             if (emails.indexOf(this.users[i].Email) != -1) {
                 users.push(this.users[i]);
@@ -533,7 +547,7 @@ var QorChatAdapter = (function () {
     QorChatAdapter.prototype.loadCurrentUserId = function () {
         var userId = 0;
         var self = this;
-        $.ajax("http://chat_server.qortex.theplant-dev.com/users/my-account", {
+        $.ajax(QorChatAdapterConstants.CHAT_SERVER_BASE_HTTP_URL + "/users/my-account", {
             async: false,
             type: 'get',
             headers: { Authorization: 'Bearer ' + self.qorchatToken },
@@ -554,7 +568,7 @@ var QorChatAdapter = (function () {
     QorChatAdapter.prototype.currentUserAccessToken = function () {
         var token = "";
         var self = this;
-        $.ajax("http://chat_server.qortex.theplant-dev.com/fetch_chat_token", {
+        $.ajax(QorChatAdapterConstants.CHAT_SERVER_BASE_HTTP_URL + "/fetch_chat_token", {
             async: false,
             type: 'get',
             data: { email: this.email },
