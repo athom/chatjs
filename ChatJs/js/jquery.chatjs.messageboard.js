@@ -18,6 +18,7 @@ var MessageBoard = (function () {
         defaultOptions.chatJsContentPath = "/chatjs/";
         defaultOptions.newMessage = function (message) {
         };
+        defaultOptions.displayName = true;
         this.options = $.extend({}, defaultOptions, options);
         this.$el.addClass("message-board");
         ChatJsUtils.setOuterHeight(this.$el, this.options.height);
@@ -164,6 +165,7 @@ var MessageBoard = (function () {
         this.$textBox.focus();
     };
     MessageBoard.prototype.addMessage = function (message, scroll) {
+        var _this = this;
         /// <summary>
         ///     Adds a message to the board. This method is called both when the current user or the other user is sending a
         ///     message
@@ -242,7 +244,9 @@ var MessageBoard = (function () {
                 var $chatMessage = $("<div/>").addClass("chat-message").attr("data-val-user-from", message.UserFromId);
                 $chatMessage.appendTo(this.$messagesWrapper);
                 var $gravatarWrapper = $("<div/>").addClass("chat-gravatar-wrapper").appendTo($chatMessage);
-                var $nameWrapper = $("<div/>").addClass("chat-name-wrapper").appendTo($chatMessage);
+                if (this.options.displayName) {
+                    var $nameWrapper = $("<div/>").addClass("chat-name-wrapper").appendTo($chatMessage);
+                }
                 var $textWrapper = $("<div/>").addClass("chat-text-wrapper").appendTo($chatMessage);
                 // add text
                 $messageP.appendTo($textWrapper);
@@ -252,7 +256,9 @@ var MessageBoard = (function () {
                 this.options.adapter.server.getUserInfo(message.UserFromId, function (user) {
                     $img.attr("src", decodeURI(user.ProfilePictureUrl));
                     // add name
-                    $("<p>" + user.Name + "</p>").addClass("profile-name").appendTo($nameWrapper);
+                    if (_this.options.displayName) {
+                        $("<p>" + user.Name + "</p>").appendTo($nameWrapper);
+                    }
                 });
             }
         }

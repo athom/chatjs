@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96176996-85d6-43b4-96b9-d18dfc063e7a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChatJs/css/jquery.chatjs.css" afterPath="$PROJECT_DIR$/ChatJs/css/jquery.chatjs.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.messageboard.js.map" afterPath="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.messageboard.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.messageboard.js" afterPath="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.messageboard.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.messageboard.ts" afterPath="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.messageboard.ts" />
@@ -39,21 +38,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="jquery.chatjs.css" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="jquery.chatjs.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ChatJs/css/jquery.chatjs.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5854342" vertical-offset="3797" max-vertical-offset="8250">
-              <caret line="281" column="26" selection-start-line="281" selection-start-column="26" selection-end-line="281" selection-end-column="26" />
+            <state vertical-scroll-proportion="-6.269231" vertical-offset="3797" max-vertical-offset="8250">
+              <caret line="264" column="15" selection-start-line="264" selection-start-column="15" selection-end-line="264" selection-end-column="15" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="jquery.chatjs.messageboard.ts" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="jquery.chatjs.messageboard.ts" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.messageboard.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="4395" max-vertical-offset="5250">
-              <caret line="316" column="0" selection-start-line="316" selection-start-column="0" selection-end-line="316" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.33238232" vertical-offset="397" max-vertical-offset="5355">
+              <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -74,30 +73,20 @@
       <file leaf-file-name="jquery.chatjs.messageboard.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.messageboard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="3794" max-vertical-offset="4125">
-              <caret line="272" column="2" selection-start-line="272" selection-start-column="2" selection-end-line="272" selection-end-column="2" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="3884" max-vertical-offset="4215">
+              <caret line="278" column="2" selection-start-line="278" selection-start-column="2" selection-end-line="278" selection-end-column="2" />
               <folding>
-                <marker date="1427182198000" expanded="true" signature="331:14177" placeholder="{...}" />
-                <marker date="1427182198000" expanded="true" signature="7618:8470" placeholder="{...}" />
-                <marker date="1427182198000" expanded="true" signature="7628:7786" placeholder="//..." />
-                <marker date="1427182198000" expanded="true" signature="8519:8557" placeholder="{...}" />
-                <marker date="1427182198000" expanded="true" signature="8626:14149" placeholder="{...}" />
-                <marker date="1427182198000" expanded="true" signature="8636:8964" placeholder="//..." />
-                <marker date="1427182198000" expanded="true" signature="9080:9214" placeholder="{...}" />
-                <marker date="1427182198000" expanded="true" signature="9223:9337" placeholder="//..." />
-                <marker date="1427182198000" expanded="true" signature="9373:10327" placeholder="{...}" />
-                <marker date="1427182198000" expanded="true" signature="10363:11765" placeholder="{...}" />
-                <marker date="1427182198000" expanded="true" signature="10480:11505" placeholder="[...]" />
-                <marker date="1427182198000" expanded="true" signature="11562:11707" placeholder="{...}" />
-                <marker date="1427182198000" expanded="true" signature="11866:12219" placeholder="{...}" />
-                <marker date="1427182198000" expanded="true" signature="11880:12075" placeholder="//..." />
-                <marker date="1427182198000" expanded="true" signature="12233:14090" placeholder="{...}" />
-                <marker date="1427182198000" expanded="true" signature="12777:12915" placeholder="{...}" />
-                <marker date="1427182198000" expanded="true" signature="12933:14080" placeholder="{...}" />
-                <marker date="1427182198000" expanded="true" signature="13841:14064" placeholder="{...}" />
-                <marker date="1427182198000" expanded="true" signature="14221:14421" placeholder="{...}" />
-                <marker date="1427182198000" expanded="true" signature="14244:14402" placeholder="{...}" />
-                <marker date="1427182198000" expanded="true" signature="14276:14394" placeholder="{...}" />
+                <marker date="1427182897000" expanded="true" signature="331:14370" placeholder="{...}" />
+                <marker date="1427182897000" expanded="true" signature="7661:8513" placeholder="{...}" />
+                <marker date="1427182897000" expanded="true" signature="7671:7829" placeholder="//..." />
+                <marker date="1427182897000" expanded="true" signature="8562:8600" placeholder="{...}" />
+                <marker date="1427182897000" expanded="true" signature="8669:14342" placeholder="{...}" />
+                <marker date="1427182897000" expanded="true" signature="14239:14283" placeholder="{...}" />
+                <marker date="1427182897000" expanded="true" signature="14239:14273" placeholder="{...}" />
+                <marker date="1427182897000" expanded="true" signature="14239:14257" placeholder="{...}" />
+                <marker date="1427182897000" expanded="true" signature="14414:14614" placeholder="{...}" />
+                <marker date="1427182897000" expanded="true" signature="14437:14595" placeholder="{...}" />
+                <marker date="1427182897000" expanded="true" signature="14469:14587" placeholder="{...}" />
               </folding>
             </state>
           </provider>
@@ -151,8 +140,8 @@
         <option value="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.friendswindow.ts" />
         <option value="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.pmwindow.ts" />
         <option value="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.adapter.qorchat.ts" />
-        <option value="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.messageboard.ts" />
         <option value="$PROJECT_DIR$/ChatJs/css/jquery.chatjs.css" />
+        <option value="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.messageboard.ts" />
       </list>
     </option>
   </component>
@@ -406,30 +395,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.messageboard.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3794" max-vertical-offset="4125">
-          <caret line="272" column="2" selection-start-line="272" selection-start-column="2" selection-end-line="272" selection-end-column="2" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="3884" max-vertical-offset="4215">
+          <caret line="278" column="2" selection-start-line="278" selection-start-column="2" selection-end-line="278" selection-end-column="2" />
           <folding>
-            <marker date="1427182198000" expanded="true" signature="331:14177" placeholder="{...}" />
-            <marker date="1427182198000" expanded="true" signature="7618:8470" placeholder="{...}" />
-            <marker date="1427182198000" expanded="true" signature="7628:7786" placeholder="//..." />
-            <marker date="1427182198000" expanded="true" signature="8519:8557" placeholder="{...}" />
-            <marker date="1427182198000" expanded="true" signature="8626:14149" placeholder="{...}" />
-            <marker date="1427182198000" expanded="true" signature="8636:8964" placeholder="//..." />
-            <marker date="1427182198000" expanded="true" signature="9080:9214" placeholder="{...}" />
-            <marker date="1427182198000" expanded="true" signature="9223:9337" placeholder="//..." />
-            <marker date="1427182198000" expanded="true" signature="9373:10327" placeholder="{...}" />
-            <marker date="1427182198000" expanded="true" signature="10363:11765" placeholder="{...}" />
-            <marker date="1427182198000" expanded="true" signature="10480:11505" placeholder="[...]" />
-            <marker date="1427182198000" expanded="true" signature="11562:11707" placeholder="{...}" />
-            <marker date="1427182198000" expanded="true" signature="11866:12219" placeholder="{...}" />
-            <marker date="1427182198000" expanded="true" signature="11880:12075" placeholder="//..." />
-            <marker date="1427182198000" expanded="true" signature="12233:14090" placeholder="{...}" />
-            <marker date="1427182198000" expanded="true" signature="12777:12915" placeholder="{...}" />
-            <marker date="1427182198000" expanded="true" signature="12933:14080" placeholder="{...}" />
-            <marker date="1427182198000" expanded="true" signature="13841:14064" placeholder="{...}" />
-            <marker date="1427182198000" expanded="true" signature="14221:14421" placeholder="{...}" />
-            <marker date="1427182198000" expanded="true" signature="14244:14402" placeholder="{...}" />
-            <marker date="1427182198000" expanded="true" signature="14276:14394" placeholder="{...}" />
+            <marker date="1427182897000" expanded="true" signature="331:14370" placeholder="{...}" />
+            <marker date="1427182897000" expanded="true" signature="7661:8513" placeholder="{...}" />
+            <marker date="1427182897000" expanded="true" signature="7671:7829" placeholder="//..." />
+            <marker date="1427182897000" expanded="true" signature="8562:8600" placeholder="{...}" />
+            <marker date="1427182897000" expanded="true" signature="8669:14342" placeholder="{...}" />
+            <marker date="1427182897000" expanded="true" signature="14239:14283" placeholder="{...}" />
+            <marker date="1427182897000" expanded="true" signature="14239:14273" placeholder="{...}" />
+            <marker date="1427182897000" expanded="true" signature="14239:14257" placeholder="{...}" />
+            <marker date="1427182897000" expanded="true" signature="14414:14614" placeholder="{...}" />
+            <marker date="1427182897000" expanded="true" signature="14437:14595" placeholder="{...}" />
+            <marker date="1427182897000" expanded="true" signature="14469:14587" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -458,21 +437,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.messageboard.ts">
+    <entry file="file://$PROJECT_DIR$/ChatJs/css/jquery.chatjs.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4395" max-vertical-offset="5250">
-          <caret line="316" column="0" selection-start-line="316" selection-start-column="0" selection-end-line="316" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="-6.269231" vertical-offset="3797" max-vertical-offset="8250">
+          <caret line="264" column="15" selection-start-line="264" selection-start-column="15" selection-end-line="264" selection-end-column="15" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ChatJs/css/jquery.chatjs.css">
+    <entry file="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.messageboard.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5854342" vertical-offset="3797" max-vertical-offset="8250">
-          <caret line="281" column="26" selection-start-line="281" selection-start-column="26" selection-end-line="281" selection-end-column="26" />
-          <folding />
+        <state vertical-scroll-proportion="0.33238232" vertical-offset="397" max-vertical-offset="5355">
+          <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

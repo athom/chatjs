@@ -10,6 +10,7 @@ interface JQuery {
 class MessageBoardOptions {
     adapter: IAdapter;
 
+    displayName: boolean;
     // current user id
     userId: number;
     // in case this is a PM board, this is the other user id
@@ -38,6 +39,7 @@ class MessageBoard {
         defaultOptions.height = 100;
         defaultOptions.chatJsContentPath = "/chatjs/";
         defaultOptions.newMessage = (message: ChatMessageInfo) => {};
+        defaultOptions.displayName = true;
 
         this.options = $.extend({}, defaultOptions, options);
 
@@ -303,7 +305,10 @@ class MessageBoard {
                 $chatMessage.appendTo(this.$messagesWrapper);
 
                 var $gravatarWrapper = $("<div/>").addClass("chat-gravatar-wrapper").appendTo($chatMessage);
-                var $nameWrapper = $("<div/>").addClass("chat-name-wrapper").appendTo($chatMessage);
+                if(this.options.displayName){
+                    var $nameWrapper = $("<div/>").addClass("chat-name-wrapper").appendTo($chatMessage);
+
+                }
                 var $textWrapper = $("<div/>").addClass("chat-text-wrapper").appendTo($chatMessage);
 
                 // add text
@@ -316,7 +321,9 @@ class MessageBoard {
                     $img.attr("src", decodeURI(user.ProfilePictureUrl));
 
                     // add name
-                    $("<p>"+user.Name+"</p>").addClass("profile-name").appendTo($nameWrapper);
+                    if(this.options.displayName) {
+                        $("<p>" + user.Name + "</p>").appendTo($nameWrapper);
+                    }
                 });
             }
         }
