@@ -276,6 +276,12 @@ textarea.chat-window-text-box {
         float: left;
     }
 
+    .chat-message .chat-name-wrapper {
+        line-height: 1.2em;
+        margin-left: 30px;
+        font-weight: bold;
+    }
+
     .chat-message .chat-text-wrapper {
         line-height: 1.2em;
         margin-left: 30px;

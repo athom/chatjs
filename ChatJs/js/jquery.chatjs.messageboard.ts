@@ -303,6 +303,7 @@ class MessageBoard {
                 $chatMessage.appendTo(this.$messagesWrapper);
 
                 var $gravatarWrapper = $("<div/>").addClass("chat-gravatar-wrapper").appendTo($chatMessage);
+                var $nameWrapper = $("<div/>").addClass("chat-name-wrapper").appendTo($chatMessage);
                 var $textWrapper = $("<div/>").addClass("chat-text-wrapper").appendTo($chatMessage);
 
                 // add text
@@ -313,6 +314,9 @@ class MessageBoard {
                 console.log(message.UserFromId)
                 this.options.adapter.server.getUserInfo(message.UserFromId, user => {
                     $img.attr("src", decodeURI(user.ProfilePictureUrl));
+
+                    // add name
+                    $("<p>"+user.Name+"</p>").addClass("profile-name").appendTo($nameWrapper);
                 });
             }
         }

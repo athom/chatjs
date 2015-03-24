@@ -242,6 +242,7 @@ var MessageBoard = (function () {
                 var $chatMessage = $("<div/>").addClass("chat-message").attr("data-val-user-from", message.UserFromId);
                 $chatMessage.appendTo(this.$messagesWrapper);
                 var $gravatarWrapper = $("<div/>").addClass("chat-gravatar-wrapper").appendTo($chatMessage);
+                var $nameWrapper = $("<div/>").addClass("chat-name-wrapper").appendTo($chatMessage);
                 var $textWrapper = $("<div/>").addClass("chat-text-wrapper").appendTo($chatMessage);
                 // add text
                 $messageP.appendTo($textWrapper);
@@ -250,6 +251,8 @@ var MessageBoard = (function () {
                 console.log(message.UserFromId);
                 this.options.adapter.server.getUserInfo(message.UserFromId, function (user) {
                     $img.attr("src", decodeURI(user.ProfilePictureUrl));
+                    // add name
+                    $("<p>" + user.Name + "</p>").addClass("profile-name").appendTo($nameWrapper);
                 });
             }
         }
