@@ -54,8 +54,12 @@ class ChatPmWindow implements IWindow<PmWindowState> {
         if(this.options.otherUserId) {
             this.options.adapter.server.getUserInfo(this.options.otherUserId, (userInfo:ChatUserInfo) => {
                 this.options.chattingUserIds = new Array<string>();
-                this.options.chattingUserIds.push(this.options.userId.toString());
-                this.options.chattingUserIds.push(this.options.otherUserId.toString());
+                if(this.options.chattingUserIds.indexOf(this.options.userId.toString()) == -1){
+                    this.options.chattingUserIds.push(this.options.userId.toString());
+                }
+                if(this.options.chattingUserIds.indexOf(this.options.otherUserId.toString()) == -1) {
+                    this.options.chattingUserIds.push(this.options.otherUserId.toString());
+                }
 
                 var chatWindowOptions = this._setupChatWindowOptions(userInfo.Name, null, this.options.otherUserId);
                 this.chatWindow = $.chatWindow(chatWindowOptions);
@@ -67,8 +71,11 @@ class ChatPmWindow implements IWindow<PmWindowState> {
             this.options.adapter.server.getUserList(1, convId, (users:Array<ChatUserInfo>) => {
                 var existingUserIds = new Array<string>();
                 for(var i = 0; i < users.length; i++){
-                    existingUserIds.push(users[i].Id.toString());
+                    if(existingUserIds.indexOf(users[i].Id.toString()) == -1) {
+                        existingUserIds.push(users[i].Id.toString());
+                    }
                 }
+
                 this.options.chattingUserIds = existingUserIds;
                 var windowTitle = this._genWindowTitle();
                 var chatWindowOptions = this._setupChatWindowOptions(windowTitle, convId, null);
@@ -98,7 +105,9 @@ class ChatPmWindow implements IWindow<PmWindowState> {
                 if(message.ConversationId == this.options.conversationId && message.IsSystemMessage){
                     var ids = message.NewAddedUserIds;
                     for(var i = 0; i<ids.length; i++){
-                        this.options.chattingUserIds.push(ids[i].toString());
+                        if(this.options.chattingUserIds.indexOf(ids[i].toString()) == -1) {
+                            this.options.chattingUserIds.push(ids[i].toString());
+                        }
                     }
                     this._refreshWindowTitle();
                 }
@@ -151,7 +160,10 @@ class ChatPmWindow implements IWindow<PmWindowState> {
                 var convId = this.options.conversationId;
                 if(convId){ // already in meeting window
                     this.options.adapter.server.addOneParticipant(convId, this.options.chattingUserIds, userId.toString());
-                    this.options.chattingUserIds.push(userId.toString());
+
+                    if(this.options.chattingUserIds.indexOf(userId.toString()) == -1) {
+                        this.options.chattingUserIds.push(userId.toString());
+                    }
                     this._refreshWindowTitle()
                 } else {
                     convId = this.options.adapter.server.addOneParticipant(null, this.options.chattingUserIds, userId.toString());

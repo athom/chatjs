@@ -36,8 +36,12 @@ var ChatPmWindow = (function () {
         if (this.options.otherUserId) {
             this.options.adapter.server.getUserInfo(this.options.otherUserId, function (userInfo) {
                 _this.options.chattingUserIds = new Array();
-                _this.options.chattingUserIds.push(_this.options.userId.toString());
-                _this.options.chattingUserIds.push(_this.options.otherUserId.toString());
+                if (_this.options.chattingUserIds.indexOf(_this.options.userId.toString()) == -1) {
+                    _this.options.chattingUserIds.push(_this.options.userId.toString());
+                }
+                if (_this.options.chattingUserIds.indexOf(_this.options.otherUserId.toString()) == -1) {
+                    _this.options.chattingUserIds.push(_this.options.otherUserId.toString());
+                }
                 var chatWindowOptions = _this._setupChatWindowOptions(userInfo.Name, null, _this.options.otherUserId);
                 _this.chatWindow = $.chatWindow(chatWindowOptions);
                 _this._setupInviteButton();
@@ -49,7 +53,9 @@ var ChatPmWindow = (function () {
             this.options.adapter.server.getUserList(1, convId, function (users) {
                 var existingUserIds = new Array();
                 for (var i = 0; i < users.length; i++) {
-                    existingUserIds.push(users[i].Id.toString());
+                    if (existingUserIds.indexOf(users[i].Id.toString()) == -1) {
+                        existingUserIds.push(users[i].Id.toString());
+                    }
                 }
                 _this.options.chattingUserIds = existingUserIds;
                 var windowTitle = _this._genWindowTitle();
@@ -78,7 +84,9 @@ var ChatPmWindow = (function () {
                 if (message.ConversationId == _this.options.conversationId && message.IsSystemMessage) {
                     var ids = message.NewAddedUserIds;
                     for (var i = 0; i < ids.length; i++) {
-                        _this.options.chattingUserIds.push(ids[i].toString());
+                        if (_this.options.chattingUserIds.indexOf(ids[i].toString()) == -1) {
+                            _this.options.chattingUserIds.push(ids[i].toString());
+                        }
                     }
                     _this._refreshWindowTitle();
                 }
@@ -123,7 +131,9 @@ var ChatPmWindow = (function () {
                 var convId = _this.options.conversationId;
                 if (convId) {
                     _this.options.adapter.server.addOneParticipant(convId, _this.options.chattingUserIds, userId.toString());
-                    _this.options.chattingUserIds.push(userId.toString());
+                    if (_this.options.chattingUserIds.indexOf(userId.toString()) == -1) {
+                        _this.options.chattingUserIds.push(userId.toString());
+                    }
                     _this._refreshWindowTitle();
                 }
                 else {
