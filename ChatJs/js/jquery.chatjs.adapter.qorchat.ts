@@ -13,7 +13,8 @@ class QorChatAdapterConstants {
     // time until Echobot sends the message back
     public static ECHOBOT_REPLY_DELAY = 3000;
 
-    public static CHAT_SERVER_BASE_HTTP_URL = "http://chat_server.qortex.theplant-dev.com";
+//    public static CHAT_SERVER_BASE_HTTP_URL = "https://chat_server.qortex.theplant-dev.com";
+    public static CHAT_SERVER_BASE_HTTP_URL = "https://chatserver-qortex.theplant-dev.com";
     public static CHAT_SERVER_BASE_WS_URL = "ws://chat_server.qortex.theplant-dev.com";
 
 //    for local debugger
@@ -655,6 +656,7 @@ class QorChatAdapter implements IAdapter {
         if (!email) {
             //Local debug
             email = "athom@126.com"
+//            email = "yeerkunth@gmail.com"
 //            email = "venustingting@gmail.com"
         }
 

@@ -13,7 +13,8 @@ var QorChatAdapterConstants = (function () {
     QorChatAdapterConstants.ECHOBOT_TYPING_DELAY = 1000;
     // time until Echobot sends the message back
     QorChatAdapterConstants.ECHOBOT_REPLY_DELAY = 3000;
-    QorChatAdapterConstants.CHAT_SERVER_BASE_HTTP_URL = "http://chat_server.qortex.theplant-dev.com";
+    //    public static CHAT_SERVER_BASE_HTTP_URL = "https://chat_server.qortex.theplant-dev.com";
+    QorChatAdapterConstants.CHAT_SERVER_BASE_HTTP_URL = "https://chatserver-qortex.theplant-dev.com";
     QorChatAdapterConstants.CHAT_SERVER_BASE_WS_URL = "ws://chat_server.qortex.theplant-dev.com";
     return QorChatAdapterConstants;
 })();
