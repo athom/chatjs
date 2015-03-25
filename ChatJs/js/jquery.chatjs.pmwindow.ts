@@ -171,7 +171,7 @@ class ChatPmWindow implements IWindow<PmWindowState> {
     }
 
     _genWindowTitle():string{
-        return "Meeting(" + this.options.chattingUserIds.length.toString() +" people)";
+        return "Meeting (" + this.options.chattingUserIds.length.toString() +" people)";
     }
 
     focus() {

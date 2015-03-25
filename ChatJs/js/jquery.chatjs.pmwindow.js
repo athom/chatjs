@@ -140,7 +140,7 @@ var ChatPmWindow = (function () {
         this.chatWindow.$windowTitle.find(".text").text(this._genWindowTitle());
     };
     ChatPmWindow.prototype._genWindowTitle = function () {
-        return "Meeting(" + this.options.chattingUserIds.length.toString() + " people)";
+        return "Meeting (" + this.options.chattingUserIds.length.toString() + " people)";
     };
     ChatPmWindow.prototype.focus = function () {
     };
