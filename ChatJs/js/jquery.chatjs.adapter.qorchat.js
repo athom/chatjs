@@ -15,7 +15,7 @@ var QorChatAdapterConstants = (function () {
     QorChatAdapterConstants.ECHOBOT_REPLY_DELAY = 3000;
     //    public static CHAT_SERVER_BASE_HTTP_URL = "https://chat_server.qortex.theplant-dev.com";
     QorChatAdapterConstants.CHAT_SERVER_BASE_HTTP_URL = "https://chatserver-qortex.theplant-dev.com";
-    QorChatAdapterConstants.CHAT_SERVER_BASE_WS_URL = "ws://chat_server.qortex.theplant-dev.com";
+    QorChatAdapterConstants.CHAT_SERVER_BASE_WS_URL = "wss://chatserver-qortex.theplant-dev.com";
     return QorChatAdapterConstants;
 })();
 var QueryConvOptions = (function () {
@@ -376,6 +376,18 @@ var QorChatServerAdapter = (function () {
                     i++;
                 }
             }
+        });
+        // sort contacts list
+        this.users.sort(function (u1, u2) {
+            var a = u1.Name.toLowerCase();
+            var b = u2.Name.toLowerCase();
+            if (a > b) {
+                return 1;
+            }
+            if (a < b) {
+                return -1;
+            }
+            return 0;
         });
         return self.currentUser != null;
     };

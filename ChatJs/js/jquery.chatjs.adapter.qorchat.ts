@@ -15,7 +15,7 @@ class QorChatAdapterConstants {
 
 //    public static CHAT_SERVER_BASE_HTTP_URL = "https://chat_server.qortex.theplant-dev.com";
     public static CHAT_SERVER_BASE_HTTP_URL = "https://chatserver-qortex.theplant-dev.com";
-    public static CHAT_SERVER_BASE_WS_URL = "ws://chat_server.qortex.theplant-dev.com";
+    public static CHAT_SERVER_BASE_WS_URL = "wss://chatserver-qortex.theplant-dev.com";
 
 //    for local debugger
 //    public static CHAT_SERVER_BASE_HTTP_URL = "http://localhost:3333";
@@ -457,6 +457,21 @@ class QorChatServerAdapter implements IServerAdapter {
                 }
             }
         })
+
+
+        // sort contacts list
+        this.users.sort(function(u1, u2){
+            var a = u1.Name.toLowerCase();
+            var b = u2.Name.toLowerCase();
+            if(a>b){
+                return 1;
+            }
+            if(a<b){
+                return -1;
+            }
+            return 0;
+        });
+
         return self.currentUser!=null
     }
 
