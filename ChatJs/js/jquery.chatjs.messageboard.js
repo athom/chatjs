@@ -71,6 +71,13 @@ var MessageBoard = (function () {
                 return;
             }
             if (shouldProcessMessage) {
+                if (message.WithWindowOpen) {
+                    if (message.UserFromId != _this.options.userId) {
+                        if (_this.options.playSound)
+                            _this.playSound();
+                    }
+                    return;
+                }
                 _this.addMessage(message);
                 if (message.UserFromId != _this.options.userId) {
                     if (_this.options.playSound)

@@ -94,8 +94,10 @@ class ChatController implements IStateObject<ChatJsState> {
                 var myId = this.options.userId;
                 if (message.UserToId && message.UserToId == myId && !this.findPmWindowByOtherUserId(message.UserFromId)) { // private chat
                     this.createPmWindow(message.UserFromId, null, true, true);
+                    message.WithWindowOpen = true;
                 } else if (!this.findPmWindowByConvId(message.ConversationId)){ // meeting chat
                     this.createPmWindow(null, message.ConversationId, true, true);
+                    message.WithWindowOpen = true;
                 }
             });
 
@@ -171,7 +173,6 @@ class ChatController implements IStateObject<ChatJsState> {
         chatPmOptions.onParticipantInvited = (pmWindow, convId) => {
             this.createPmWindow(null, convId, true, true);
         };
-
         return $.chatPmWindow(chatPmOptions);
     }
 

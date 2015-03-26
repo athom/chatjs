@@ -137,6 +137,7 @@ var QorChatServerAdapter = (function () {
         this.rooms.push(defaultRoom);
         // configuring client to return every event to me
         this.clientAdapter.onMessagesChanged(function (message) { return function () {
+            debugger;
         }; });
     }
     QorChatServerAdapter.prototype.setupWsConn = function () {

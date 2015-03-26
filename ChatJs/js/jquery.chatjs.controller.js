@@ -50,9 +50,11 @@ var ChatController = (function () {
                 var myId = _this.options.userId;
                 if (message.UserToId && message.UserToId == myId && !_this.findPmWindowByOtherUserId(message.UserFromId)) {
                     _this.createPmWindow(message.UserFromId, null, true, true);
+                    message.WithWindowOpen = true;
                 }
                 else if (!_this.findPmWindowByConvId(message.ConversationId)) {
                     _this.createPmWindow(null, message.ConversationId, true, true);
+                    message.WithWindowOpen = true;
                 }
             });
             // if the user is able to select rooms

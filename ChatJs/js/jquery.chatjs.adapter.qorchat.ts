@@ -181,6 +181,7 @@ class QorChatServerAdapter implements IServerAdapter {
 
         // configuring client to return every event to me
         this.clientAdapter.onMessagesChanged( (message:ChatMessageInfo) => function(){
+            debugger
         });
     }
 

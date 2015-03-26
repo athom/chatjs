@@ -83,6 +83,7 @@ class MessageBoard {
         });
 
         this.options.adapter.client.onMessagesChanged((message: ChatMessageInfo) => {
+
             var shouldProcessMessage = false;
             var otherUserId = this.options.otherUserId;
             var userId = this.options.userId;
@@ -104,6 +105,14 @@ class MessageBoard {
             }
 
             if (shouldProcessMessage) {
+                if(message.WithWindowOpen) {
+                    if (message.UserFromId != this.options.userId) {
+                        if (this.options.playSound)
+                            this.playSound();
+                    }
+                    return;
+                }
+
                 this.addMessage(message);
                 if (message.UserFromId != this.options.userId) {
                     if (this.options.playSound)

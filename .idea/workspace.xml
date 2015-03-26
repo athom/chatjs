@@ -2,11 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96176996-85d6-43b4-96b9-d18dfc063e7a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.adapter.qorchat.js.map" afterPath="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.adapter.qorchat.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.adapter.qorchat.js" afterPath="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.adapter.qorchat.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.adapter.qorchat.ts" afterPath="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.adapter.qorchat.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.min.js" afterPath="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.adapter.servertypes.js.map" afterPath="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.adapter.servertypes.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.adapter.servertypes.ts" afterPath="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.adapter.servertypes.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.controller.js.map" afterPath="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.controller.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.controller.js" afterPath="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.controller.ts" afterPath="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.controller.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.messageboard.js.map" afterPath="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.messageboard.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.messageboard.js" afterPath="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.messageboard.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.messageboard.ts" afterPath="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.messageboard.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="chatjs.iws" />
@@ -30,14 +36,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="jquery.chatjs.adapter.qorchat.ts" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="jquery.chatjs.adapter.qorchat.ts" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.adapter.qorchat.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3933975" vertical-offset="6644" max-vertical-offset="11055">
-              <caret line="470" column="13" selection-start-line="470" selection-start-column="13" selection-end-line="470" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="9884" max-vertical-offset="11070">
+              <caret line="687" column="49" selection-start-line="687" selection-start-column="49" selection-end-line="687" selection-end-column="49" />
               <folding>
-                <element signature="e#5851#6000#0" expanded="false" />
-                <element signature="e#6051#6130#0" expanded="false" />
+                <element signature="e#5872#6021#0" expanded="false" />
+                <element signature="e#6072#6151#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -46,8 +52,8 @@
       <file leaf-file-name="jquery.chatjs.adapter.demo.ts" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.adapter.demo.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1146" max-vertical-offset="4530">
-              <caret line="87" column="50" selection-start-line="87" selection-start-column="50" selection-end-line="87" selection-end-column="50" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1731" max-vertical-offset="4530">
+              <caret line="126" column="27" selection-start-line="126" selection-start-column="27" selection-end-line="126" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -83,11 +89,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="jquery.chatjs.messageboard.ts" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="jquery.chatjs.messageboard.ts" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.messageboard.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1042" max-vertical-offset="5310">
-              <caret line="84" column="53" selection-start-line="84" selection-start-column="36" selection-end-line="84" selection-end-column="53" />
+            <state vertical-scroll-proportion="0.7290234" vertical-offset="1090" max-vertical-offset="5445">
+              <caret line="111" column="21" selection-start-line="111" selection-start-column="21" selection-end-line="111" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -96,8 +102,8 @@
       <file leaf-file-name="jquery.chatjs.controller.ts" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.controller.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="75.96154" vertical-offset="4585" max-vertical-offset="5025">
-              <caret line="174" column="45" selection-start-line="174" selection-start-column="45" selection-end-line="174" selection-end-column="45" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1225" max-vertical-offset="5040">
+              <caret line="100" column="17" selection-start-line="100" selection-start-column="17" selection-end-line="100" selection-end-column="17" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -105,55 +111,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="jquery.chatjs.messageboard.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.messageboard.js">
+      <file leaf-file-name="jquery.chatjs.adapter.servertypes.ts" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.adapter.servertypes.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="4170" max-vertical-offset="4260">
-              <caret line="278" column="2" selection-start-line="278" selection-start-column="2" selection-end-line="278" selection-end-column="2" />
-              <folding>
-                <marker date="1427341161000" expanded="true" signature="331:14370" placeholder="{...}" />
-                <marker date="1427341161000" expanded="true" signature="376:5172" placeholder="{...}" />
-                <marker date="1427341161000" expanded="true" signature="1344:1572" placeholder="{...}" />
-                <marker date="1427341161000" expanded="true" signature="1382:1562" placeholder="{...}" />
-                <marker date="1427341161000" expanded="true" signature="1706:2647" placeholder="{...}" />
-                <marker date="1427341161000" expanded="true" signature="1802:2009" placeholder="{...}" />
-                <marker date="1427341161000" expanded="true" signature="2053:2254" placeholder="{...}" />
-                <marker date="1427341161000" expanded="true" signature="2306:2531" placeholder="{...}" />
-                <marker date="1427341161000" expanded="true" signature="2723:4044" placeholder="{...}" />
-                <marker date="1427341161000" expanded="true" signature="2904:3138" placeholder="{...}" />
-                <marker date="1427341161000" expanded="true" signature="3182:3321" placeholder="{...}" />
-                <marker date="1427341161000" expanded="true" signature="3373:3536" placeholder="{...}" />
-                <marker date="1427341161000" expanded="true" signature="3671:3710" placeholder="{...}" />
-                <marker date="1427341161000" expanded="true" signature="3749:4034" placeholder="{...}" />
-                <marker date="1427341161000" expanded="true" signature="3858:3969" placeholder="{...}" />
-                <marker date="1427341161000" expanded="true" signature="4233:5164" placeholder="{...}" />
-                <marker date="1427341161000" expanded="true" signature="4289:4358" placeholder="{...}" />
-                <marker date="1427341161000" expanded="true" signature="4442:5152" placeholder="{...}" />
-                <marker date="1427341161000" expanded="true" signature="4594:4833" placeholder="{...}" />
-                <marker date="1427341161000" expanded="true" signature="4671:4761" placeholder="{...}" />
-                <marker date="1427341161000" expanded="true" signature="4869:5138" placeholder="{...}" />
-                <marker date="1427341161000" expanded="true" signature="4957:5120" placeholder="{...}" />
-                <marker date="1427341161000" expanded="true" signature="5235:5923" placeholder="{...}" />
-                <marker date="1427341161000" expanded="true" signature="5271:5441" placeholder="//..." />
-                <marker date="1427341161000" expanded="true" signature="5829:5880" placeholder="{...}" />
-                <marker date="1427341161000" expanded="true" signature="5985:6225" placeholder="{...}" />
-                <marker date="1427341161000" expanded="true" signature="6281:6372" placeholder="{...}" />
-                <marker date="1427341161000" expanded="true" signature="6432:6665" placeholder="{...}" />
-                <marker date="1427341161000" expanded="true" signature="6646:6657" placeholder="{...}" />
-                <marker date="1427341161000" expanded="true" signature="6731:7608" placeholder="{...}" />
-                <marker date="1427341161000" expanded="true" signature="6741:6880" placeholder="//..." />
-                <marker date="1427341161000" expanded="true" signature="7589:7600" placeholder="{...}" />
-                <marker date="1427341161000" expanded="true" signature="7661:8513" placeholder="{...}" />
-                <marker date="1427341161000" expanded="true" signature="7671:7829" placeholder="//..." />
-                <marker date="1427341161000" expanded="true" signature="8562:8600" placeholder="{...}" />
-                <marker date="1427341161000" expanded="true" signature="8669:14342" placeholder="{...}" />
-                <marker date="1427341161000" expanded="true" signature="14239:14283" placeholder="{...}" />
-                <marker date="1427341161000" expanded="true" signature="14239:14273" placeholder="{...}" />
-                <marker date="1427341161000" expanded="true" signature="14239:14257" placeholder="{...}" />
-                <marker date="1427341161000" expanded="true" signature="14414:14614" placeholder="{...}" />
-                <marker date="1427341161000" expanded="true" signature="14437:14595" placeholder="{...}" />
-                <marker date="1427341161000" expanded="true" signature="14469:14587" placeholder="{...}" />
-              </folding>
+            <state vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="2070">
+              <caret line="29" column="18" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="18" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -171,8 +134,8 @@
       <file leaf-file-name="jquery.chatjs.friendswindow.ts" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.friendswindow.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.692307" vertical-offset="1005" max-vertical-offset="2550">
-              <caret line="95" column="5" selection-start-line="95" selection-start-column="5" selection-end-line="95" selection-end-column="5" />
+            <state vertical-scroll-proportion="-13.269231" vertical-offset="1005" max-vertical-offset="2550">
+              <caret line="96" column="0" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -192,12 +155,13 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/ChatJs/css/jquery.chatjs.css" />
-        <option value="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.messageboard.ts" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.pmwindow.ts" />
-        <option value="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.controller.ts" />
         <option value="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.friendswindow.ts" />
         <option value="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.adapter.qorchat.ts" />
+        <option value="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.adapter.servertypes.ts" />
+        <option value="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.controller.ts" />
+        <option value="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.messageboard.ts" />
       </list>
     </option>
   </component>
@@ -416,8 +380,8 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="300" max-vertical-offset="9720">
           <caret line="40" column="27" selection-start-line="40" selection-start-column="27" selection-end-line="40" selection-end-column="27" />
           <folding>
-            <element signature="e#5851#6000#0" expanded="false" />
-            <element signature="e#6051#6130#0" expanded="false" />
+            <element signature="e#5872#6021#0" expanded="false" />
+            <element signature="e#6072#6151#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -477,48 +441,48 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="4170" max-vertical-offset="4260">
           <caret line="278" column="2" selection-start-line="278" selection-start-column="2" selection-end-line="278" selection-end-column="2" />
           <folding>
-            <marker date="1427341161000" expanded="true" signature="331:14370" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="376:5172" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="1344:1572" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="1382:1562" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="1706:2647" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="1802:2009" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="2053:2254" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="2306:2531" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="2723:4044" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="2904:3138" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="3182:3321" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="3373:3536" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="3671:3710" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="3749:4034" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="3858:3969" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="4233:5164" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="4289:4358" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="4442:5152" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="4594:4833" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="4671:4761" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="4869:5138" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="4957:5120" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="5235:5923" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="5271:5441" placeholder="//..." />
-            <marker date="1427341161000" expanded="true" signature="5829:5880" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="5985:6225" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="6281:6372" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="6432:6665" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="6646:6657" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="6731:7608" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="6741:6880" placeholder="//..." />
-            <marker date="1427341161000" expanded="true" signature="7589:7600" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="7661:8513" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="7671:7829" placeholder="//..." />
-            <marker date="1427341161000" expanded="true" signature="8562:8600" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="8669:14342" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="14239:14283" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="14239:14273" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="14239:14257" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="14414:14614" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="14437:14595" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="14469:14587" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="//..." />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="//..." />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="//..." />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -544,8 +508,8 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="390" max-vertical-offset="10605">
           <caret line="26" column="1" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="1" />
           <folding>
-            <element signature="e#5851#6000#0" expanded="false" />
-            <element signature="e#6051#6130#0" expanded="false" />
+            <element signature="e#5872#6021#0" expanded="false" />
+            <element signature="e#6072#6151#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -576,51 +540,51 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.messageboard.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3884" max-vertical-offset="4215">
-          <caret line="278" column="2" selection-start-line="278" selection-start-column="2" selection-end-line="278" selection-end-column="2" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="4155" max-vertical-offset="4260">
+          <caret line="277" column="2" selection-start-line="277" selection-start-column="2" selection-end-line="277" selection-end-column="2" />
           <folding>
-            <marker date="1427341161000" expanded="true" signature="331:14370" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="376:5172" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="1344:1572" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="1382:1562" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="1706:2647" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="1802:2009" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="2053:2254" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="2306:2531" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="2723:4044" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="2904:3138" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="3182:3321" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="3373:3536" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="3671:3710" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="3749:4034" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="3858:3969" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="4233:5164" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="4289:4358" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="4442:5152" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="4594:4833" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="4671:4761" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="4869:5138" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="4957:5120" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="5235:5923" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="5271:5441" placeholder="//..." />
-            <marker date="1427341161000" expanded="true" signature="5829:5880" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="5985:6225" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="6281:6372" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="6432:6665" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="6646:6657" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="6731:7608" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="6741:6880" placeholder="//..." />
-            <marker date="1427341161000" expanded="true" signature="7589:7600" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="7661:8513" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="7671:7829" placeholder="//..." />
-            <marker date="1427341161000" expanded="true" signature="8562:8600" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="8669:14342" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="14239:14283" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="14239:14273" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="14239:14257" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="14414:14614" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="14437:14595" placeholder="{...}" />
-            <marker date="1427341161000" expanded="true" signature="14469:14587" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="//..." />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="//..." />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="//..." />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1427354342000" expanded="true" signature="-1:-1" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -649,40 +613,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.adapter.demo.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1146" max-vertical-offset="4530">
-          <caret line="87" column="50" selection-start-line="87" selection-start-column="50" selection-end-line="87" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.messageboard.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1042" max-vertical-offset="5310">
-          <caret line="84" column="53" selection-start-line="84" selection-start-column="36" selection-end-line="84" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.controller.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="75.96154" vertical-offset="4585" max-vertical-offset="5025">
-          <caret line="174" column="45" selection-start-line="174" selection-start-column="45" selection-end-line="174" selection-end-column="45" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.friendswindow.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.692307" vertical-offset="1005" max-vertical-offset="2550">
-          <caret line="95" column="5" selection-start-line="95" selection-start-column="5" selection-end-line="95" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/lib.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="15040" max-vertical-offset="212955">
@@ -691,14 +621,56 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.friendswindow.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.269231" vertical-offset="1005" max-vertical-offset="2550">
+          <caret line="96" column="0" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.adapter.demo.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1731" max-vertical-offset="4530">
+          <caret line="126" column="27" selection-start-line="126" selection-start-column="27" selection-end-line="126" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.adapter.qorchat.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3933975" vertical-offset="6644" max-vertical-offset="11055">
-          <caret line="470" column="13" selection-start-line="470" selection-start-column="13" selection-end-line="470" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="9884" max-vertical-offset="11070">
+          <caret line="687" column="49" selection-start-line="687" selection-start-column="49" selection-end-line="687" selection-end-column="49" />
           <folding>
-            <element signature="e#5851#6000#0" expanded="false" />
-            <element signature="e#6051#6130#0" expanded="false" />
+            <element signature="e#5872#6021#0" expanded="false" />
+            <element signature="e#6072#6151#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.adapter.servertypes.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="2070">
+          <caret line="29" column="18" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.controller.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1225" max-vertical-offset="5040">
+          <caret line="100" column="17" selection-start-line="100" selection-start-column="17" selection-end-line="100" selection-end-column="17" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.messageboard.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7290234" vertical-offset="1090" max-vertical-offset="5445">
+          <caret line="111" column="21" selection-start-line="111" selection-start-column="21" selection-end-line="111" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>

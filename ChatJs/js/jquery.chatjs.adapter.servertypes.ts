@@ -27,6 +27,7 @@
     /// Still verifying whether this is necessary
     DateTime: Date
 
+    WithWindowOpen: boolean;
     IsSystemMessage: boolean;
     NewAddedUserIds: Array<number>;
 }
