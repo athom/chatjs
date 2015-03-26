@@ -137,7 +137,6 @@ var QorChatServerAdapter = (function () {
         this.rooms.push(defaultRoom);
         // configuring client to return every event to me
         this.clientAdapter.onMessagesChanged(function (message) { return function () {
-            debugger;
         }; });
     }
     QorChatServerAdapter.prototype.setupWsConn = function () {
@@ -368,7 +367,7 @@ var QorChatServerAdapter = (function () {
                     cui.RoomId = QorChatAdapterConstants.DEFAULT_ROOM_ID;
                     cui.Name = u.name;
                     cui.Email = u.email;
-                    cui.ProfilePictureUrl = u.avatar;
+                    cui.ProfilePictureUrl = u.avatar.replace('http://', 'https://');
                     cui.Status = 0 /* Offline */;
                     self.users.push(cui);
                     if (cui.Email == email) {
@@ -573,7 +572,7 @@ var QorChatAdapter = (function () {
                 user.RoomId = QorChatAdapterConstants.DEFAULT_ROOM_ID;
                 user.Name = u.name;
                 user.Email = u.email;
-                user.ProfilePictureUrl = u.avatar;
+                user.ProfilePictureUrl = u.avatar.replace('http://', 'https://');
                 user.Status = 0 /* Offline */;
                 self.currentUser = user;
             }

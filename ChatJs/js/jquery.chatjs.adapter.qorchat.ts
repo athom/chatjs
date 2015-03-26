@@ -181,7 +181,6 @@ class QorChatServerAdapter implements IServerAdapter {
 
         // configuring client to return every event to me
         this.clientAdapter.onMessagesChanged( (message:ChatMessageInfo) => function(){
-            debugger
         });
     }
 
@@ -448,7 +447,7 @@ class QorChatServerAdapter implements IServerAdapter {
                     cui.RoomId = QorChatAdapterConstants.DEFAULT_ROOM_ID;
                     cui.Name = u.name;
                     cui.Email = u.email;
-                    cui.ProfilePictureUrl = u.avatar;
+                    cui.ProfilePictureUrl = u.avatar.replace('http://','https://');
                     cui.Status = UserStatusType.Offline;
                     self.users.push(cui);
                     if(cui.Email == email){
@@ -705,7 +704,7 @@ class QorChatAdapter implements IAdapter {
                 user.RoomId = QorChatAdapterConstants.DEFAULT_ROOM_ID;
                 user.Name = u.name;
                 user.Email = u.email;
-                user.ProfilePictureUrl = u.avatar;
+                user.ProfilePictureUrl = u.avatar.replace('http://','https://');
                 user.Status = UserStatusType.Offline;
                 self.currentUser = user;
             }

@@ -5,14 +5,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.adapter.qorchat.js.map" afterPath="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.adapter.qorchat.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.adapter.qorchat.js" afterPath="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.adapter.qorchat.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.adapter.qorchat.ts" afterPath="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.adapter.qorchat.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.adapter.servertypes.js.map" afterPath="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.adapter.servertypes.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.adapter.servertypes.ts" afterPath="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.adapter.servertypes.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.controller.js.map" afterPath="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.controller.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.controller.js" afterPath="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.controller.ts" afterPath="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.controller.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.messageboard.js.map" afterPath="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.messageboard.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.messageboard.js" afterPath="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.messageboard.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.messageboard.ts" afterPath="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.messageboard.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.min.js" afterPath="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="chatjs.iws" />
@@ -36,14 +29,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="jquery.chatjs.adapter.qorchat.ts" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="jquery.chatjs.adapter.qorchat.ts" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.adapter.qorchat.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="9884" max-vertical-offset="11070">
-              <caret line="687" column="49" selection-start-line="687" selection-start-column="49" selection-end-line="687" selection-end-column="49" />
+            <state vertical-scroll-proportion="0.33261803" vertical-offset="115" max-vertical-offset="11055">
+              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="24" />
               <folding>
-                <element signature="e#5872#6021#0" expanded="false" />
-                <element signature="e#6072#6151#0" expanded="false" />
+                <element signature="e#5851#6000#0" expanded="false" />
+                <element signature="e#6051#6130#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -79,21 +72,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="jquery.chatjs.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ChatJs/css/jquery.chatjs.css">
+      <file leaf-file-name="jquery.chatjs.messageboard.ts" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.messageboard.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="3797" max-vertical-offset="8250">
-              <caret line="264" column="15" selection-start-line="264" selection-start-column="15" selection-end-line="264" selection-end-column="15" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="4090" max-vertical-offset="5445">
+              <caret line="281" column="55" selection-start-line="281" selection-start-column="55" selection-end-line="281" selection-end-column="55" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="jquery.chatjs.messageboard.ts" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.messageboard.ts">
+      <file leaf-file-name="jquery.chatjs.userlist.ts" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.userlist.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7290234" vertical-offset="1090" max-vertical-offset="5445">
-              <caret line="111" column="21" selection-start-line="111" selection-start-column="21" selection-end-line="111" selection-end-column="21" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="330" max-vertical-offset="2115">
+              <caret line="51" column="41" selection-start-line="51" selection-start-column="41" selection-end-line="51" selection-end-column="41" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jquery.chatjs.adapter.ts" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.adapter.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="430" max-vertical-offset="1170">
+              <caret line="56" column="80" selection-start-line="56" selection-start-column="80" selection-end-line="56" selection-end-column="80" />
               <folding />
             </state>
           </provider>
@@ -114,18 +119,8 @@
       <file leaf-file-name="jquery.chatjs.adapter.servertypes.ts" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.adapter.servertypes.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="2070">
-              <caret line="29" column="18" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="jquery.chatjs.pmwindow.ts" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.pmwindow.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2880" max-vertical-offset="3435">
-              <caret line="192" column="47" selection-start-line="192" selection-start-column="47" selection-end-line="192" selection-end-column="47" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="744" max-vertical-offset="2070">
+              <caret line="75" column="13" selection-start-line="75" selection-start-column="13" selection-end-line="75" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -158,10 +153,10 @@
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.pmwindow.ts" />
         <option value="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.friendswindow.ts" />
-        <option value="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.adapter.qorchat.ts" />
         <option value="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.adapter.servertypes.ts" />
         <option value="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.controller.ts" />
         <option value="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.messageboard.ts" />
+        <option value="$PROJECT_DIR$/ChatJs/js/jquery.chatjs.adapter.qorchat.ts" />
       </list>
     </option>
   </component>
@@ -337,7 +332,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32996207" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32996207" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -380,8 +375,8 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="300" max-vertical-offset="9720">
           <caret line="40" column="27" selection-start-line="40" selection-start-column="27" selection-end-line="40" selection-end-column="27" />
           <folding>
-            <element signature="e#5872#6021#0" expanded="false" />
-            <element signature="e#6072#6151#0" expanded="false" />
+            <element signature="e#5851#6000#0" expanded="false" />
+            <element signature="e#6051#6130#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -508,8 +503,8 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="390" max-vertical-offset="10605">
           <caret line="26" column="1" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="1" />
           <folding>
-            <element signature="e#5872#6021#0" expanded="false" />
-            <element signature="e#6072#6151#0" expanded="false" />
+            <element signature="e#5851#6000#0" expanded="false" />
+            <element signature="e#6051#6130#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -637,25 +632,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.adapter.qorchat.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="9884" max-vertical-offset="11070">
-          <caret line="687" column="49" selection-start-line="687" selection-start-column="49" selection-end-line="687" selection-end-column="49" />
-          <folding>
-            <element signature="e#5872#6021#0" expanded="false" />
-            <element signature="e#6072#6151#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.adapter.servertypes.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="2070">
-          <caret line="29" column="18" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.controller.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1225" max-vertical-offset="5040">
@@ -666,11 +642,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.userlist.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="330" max-vertical-offset="2115">
+          <caret line="51" column="41" selection-start-line="51" selection-start-column="41" selection-end-line="51" selection-end-column="41" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.adapter.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="430" max-vertical-offset="1170">
+          <caret line="56" column="80" selection-start-line="56" selection-start-column="80" selection-end-line="56" selection-end-column="80" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.adapter.servertypes.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="744" max-vertical-offset="2070">
+          <caret line="75" column="13" selection-start-line="75" selection-start-column="13" selection-end-line="75" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.messageboard.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7290234" vertical-offset="1090" max-vertical-offset="5445">
-          <caret line="111" column="21" selection-start-line="111" selection-start-column="21" selection-end-line="111" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="4090" max-vertical-offset="5445">
+          <caret line="281" column="55" selection-start-line="281" selection-start-column="55" selection-end-line="281" selection-end-column="55" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChatJs/js/jquery.chatjs.adapter.qorchat.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33261803" vertical-offset="115" max-vertical-offset="11055">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="24" />
+          <folding>
+            <element signature="e#5851#6000#0" expanded="false" />
+            <element signature="e#6051#6130#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
